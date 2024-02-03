@@ -1,17 +1,17 @@
 package chatgpt
 
 import (
-	"context"
 	"encoding/json"
-	"errors"
 	"fmt"
+	"github.com/jfixby/pin"
 	"io/ioutil"
-	"os"
 	"path/filepath"
 	"strings"
 
 	openai "github.com/sashabaranov/go-openai"
 )
+
+var client *Client = nil
 
 func ExtratProjectDescriptionUsingChatGPT(timestampFolderPath string) error {
 	// Read raw.html and raw.txt
@@ -41,7 +41,7 @@ func ExtratProjectDescriptionUsingChatGPT(timestampFolderPath string) error {
 	}
 
 	// Print the pretty-printed JSON
-	fmt.Println(string(jsonData))
+	pin.D("json", string(jsonData))
 
 	return nil
 }
@@ -74,39 +74,10 @@ func extractProjectData(rawHTML string, rawText string) (map[string]interface{},
 
 // BuildPrompt generates a formatted prompt for ChatGPT based on rawHTML and rawText.
 func BuildPrompt(rawHTML, rawText string) string {
-	task := `
-- Extract information about the target blockchain project.
-- Include: project name, homepage, logo URL, short description (up to 350 characters),
-  detailed description (up to 1000 characters), white paper link, social links, creation
-  and closing dates, market symbol, GitHub, and any other relevant information.
-- Return the result as a pretty printed JSON with standardized field names.
-`
-
-	// Placeholder values
-	example := map[string]interface{}{
-		"name":             "Example Project",
-		"homepage":         "https://example.com",
-		"logoImageUrl":     "https://example.com/logo.png",
-		"shortDescription": "A short project description.",
-		"longDescription":  "A more detailed project description.",
-		"whitePaperLink":   "https://example.com/whitepaper.pdf",
-		"socialLinks": map[string]string{
-			"twitter": "https://twitter.com/example",
-			"github":  "https://github.com/example",
-		},
-		"creationDate":   "2022-01-01",
-		"closingDate":    "2022-12-31",
-		"marketSymbol":   "EXM",
-		"additionalData": "Additional data goes here.",
-	}
-
-	// Convert data to JSON
-	jsonData, _ := json.MarshalIndent(example, "", "  ")
-	// Print the pretty-printed JSON
-	exampleProjectJson := (string(jsonData))
 
 	prompt := fmt.Sprintf(
-		"Here is some text data that is in two sections : \n"+
+		"Request: \n"+
+			"Here is some text data that is in two sections: \n"+
 			"\n"+
 			"Section 1 is HTML: \n"+
 			"______ \n"+
@@ -115,14 +86,8 @@ func BuildPrompt(rawHTML, rawText string) string {
 			"\n"+
 			"Section 2 is simple text: \n"+
 			"______ \n"+
-			"%s \n "+
-			"______ \n"+
-			"Do the following with this data: \n"+
-			"%s \n"+
-			"Example output: \n"+
-			"______ \n"+
-			"%s \n",
-		rawHTML, rawText, task, exampleProjectJson)
+			"%s \n ",
+		rawHTML, rawText)
 
 	return prompt
 }
@@ -157,64 +122,34 @@ func splitIntoChunks(text string, chunkSize int) []string {
 const maxTokens = 4096 / 2
 
 func sendToOpenAI(prompt string) (string, error) {
-	// Retrieve OpenAI API token from environment variable
-	openaiToken := os.Getenv("OPENAI_API_TOKEN")
 
-	// Check if the token is available
-	if openaiToken == "" {
-		return "", errors.New("openAI API token not set")
-	}
-
-	client := openai.NewClient(openaiToken)
-
-	// Replace "Translate the following English text to Russian:" with the desired target language
-	model := openai.GPT3Dot5Turbo
-
-	fmt.Println("Making request to ChatGPT:")
-	fmt.Println(prompt)
-	fmt.Printf("Request size is %v\n", len(prompt))
-
-	// Split the user's prompt into smaller chunks to fit within the model's constraints
-	promptChunks := splitIntoChunks(prompt, maxTokens)
-
-	// Create a chat completion request using the translation prompt chunks
-	resp, err := client.CreateChatCompletion(
-		context.Background(),
-		openai.ChatCompletionRequest{
-			Model: model,
-			Messages: []openai.ChatCompletionMessage{
-				{
-					Role:    openai.ChatMessageRoleSystem,
-					Content: "You are a helpful assistant that extracts information from HTML and text content.",
-				},
-			},
-		},
-	)
-
-	if err != nil {
-		return "", err
-	}
-
-	// Iterate over prompt chunks and add them as user messages
-	for _, chunk := range promptChunks {
-		resp, err = client.CreateChatCompletion(
-			context.Background(),
-			openai.ChatCompletionRequest{
-				Model: model,
-				Messages: []openai.ChatCompletionMessage{
-					{
-						Role:    openai.ChatMessageRoleUser,
-						Content: chunk,
-					},
-				},
-			},
-		)
+	if client == nil {
+		var err error
+		client, err = NewClient()
 		if err != nil {
 			return "", err
 		}
 	}
 
+	pin.D("", "Making request to ChatGPT:")
+	//pin.D("full prompt", prompt)
+	pin.D("Request size is", len(prompt))
+
+	// Split the user's prompt into smaller chunks to fit within the model's constraints
+
+	var resp openai.ChatCompletionResponse
+	promptChunks := splitIntoChunks(prompt, maxTokens)
+	// Iterate over prompt chunks and add them as user messages
+
+	for i, chunk := range promptChunks {
+		prefix := fmt.Sprintf("Chunk[%v/%v] ", i+1, len(promptChunks))
+		client.SendMessage(prefix + chunk)
+	}
+
 	// Extract the result from the response
+	if len(resp.Choices) == 0 {
+		return "", nil
+	}
 	result := resp.Choices[0].Message.Content
 
 	return result, nil

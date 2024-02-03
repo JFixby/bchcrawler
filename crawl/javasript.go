@@ -2,8 +2,8 @@ package crawl
 
 import (
 	"context"
-	"fmt"
 	"github.com/chromedp/chromedp"
+	"github.com/jfixby/pin"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -52,6 +52,6 @@ func CrawlAndSaveJavaScript(url string) (string, error) {
 		return dirPath, err
 	}
 
-	fmt.Println("Files saved successfully.")
+	pin.D("crawl js", "Files saved successfully.")
 	return dirPath, nil
 }

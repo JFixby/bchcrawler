@@ -1,7 +1,7 @@
 package crawl
 
 import (
-	"fmt"
+	"github.com/jfixby/pin"
 	"io/ioutil"
 	"net/http"
 	"os"
@@ -47,6 +47,6 @@ func CrawlAndSaveHTML(url string) (string, error) {
 		return dirPath, err
 	}
 
-	fmt.Println("Files saved successfully.")
+	pin.D("crawl html", "Files saved successfully.")
 	return dirPath, nil
 }
