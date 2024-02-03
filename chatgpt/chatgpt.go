@@ -70,11 +70,43 @@ func extractProjectData(rawHTML string, rawText string) (map[string]interface{},
 	return json, nil
 }
 
+const task = `
+I will send you my requests.
+The requests will be sent in chunks due to its large size.
+ 
+Ypu need to find information like project name, homepage, logo URL,
+short description (up to 350 characters), detailed description (up to 1000 characters),
+white paper link, social links, creation and closing dates,
+market symbol, GitHub, and any other relevant information that is important to know
+about the project for investors.
+
+As a result you need to to produce the resulting JSON.
+
+Example output is:
+{
+  "ProjectName": "Example Project",
+  "ProfileType": "Company",
+  "HomePage": "example.com",
+  "ShortDescription": "A short project description less than 350 characters.",
+  "LongDescription": "A more detailed project description about 1000 characters.",
+  "Twitter Link": "https://twitter.com/example",
+  "Discord Link": "https://discord.com/example",
+  "Documentation Link": "https://docs.example.com",
+  "Github Link": "https://github.com/exampleproject",
+  "Public Status": "Live on TestNet",
+  "Blog Link": "https://blog.example.com",
+  "LogoUrl": "https://example.com/logo1.png",
+  "Live": true,
+  "OnCoinMarketMap": false,
+  "MainProductType": "DEX"
+}
+`
+
 // BuildPrompt generates a formatted prompt for ChatGPT based on rawHTML and rawText.
 func BuildPrompt(rawHTML, rawText string) string {
 
 	prompt := fmt.Sprintf(
-		"Request: \n"+
+		"Request Begin: \n"+
 			"Here is some text data that is in two sections: \n"+
 			"\n"+
 			"Section 1 is HTML: \n"+
@@ -84,8 +116,12 @@ func BuildPrompt(rawHTML, rawText string) string {
 			"\n"+
 			"Section 2 is simple text: \n"+
 			"______ \n"+
-			"%s \n ",
-		rawHTML, rawText)
+			"%s \n "+
+			"______\n"+
+			"Request End.\n"+
+			"\n"+
+			"Task: %v \n",
+		rawHTML, rawText, task)
 
 	return prompt
 }
@@ -147,8 +183,5 @@ func sendToOpenAI(prompt string) (string, error) {
 			return "", err
 		}
 	}
-
-	resp, err = client.SendMessage("Now give me the resulting json as requested using the schema provided.")
-
 	return resp, err
 }
