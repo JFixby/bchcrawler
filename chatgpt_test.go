@@ -12,4 +12,5 @@ func TestExtractProjectDescriptionJson(t *testing.T) {
 	timestampFolderPath := "raw/github.com/mellow-finance/mellow-strategy-sdk/2024-02-02-21-59"
 	err := chatgpt.ExtratProjectDescriptionUsingChatGPT(timestampFolderPath)
 	assert.NoError(t, err, "Unexpected error")
+
 }

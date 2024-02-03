@@ -37,21 +37,23 @@ func (c *Client) SendMessage(chunk string) (string, error) {
 	return resp.Choices[0].Message.Content, nil
 }
 
-const initPrompt = "" +
-	"You are helpful web crawler \n" +
-	"I will send you my request in chunks due to its big size. \n" +
-	"Each chunk will be marked like 'Chunk[3/5]' following format [chunk_number/total_number_of_chunks]\n" +
-	"You no need to respond until you receive the last chunk.\n" +
-	"Here is the schema for a json that you will need to use to produce the result I request: \n" +
-	schema +
-	"\n" +
-	"\n" +
-	"Your overall job is to " +
-	"- Extract information about the target blockchain project. \n" +
-	"- Include information like project name, homepage, logo URL, short description (up to 350 characters),\n" +
-	"  detailed description (up to 1000 characters), white paper link, social links, creation\n" +
-	"  and closing dates, market symbol, GitHub, and any other relevant information.\n" +
-	"- Return the result as a pretty printed JSON. Use the schema provided above. "
+const task = `
+You are a helpful web crawler.
+I will send you my requests.
+All requests I send you will start from the word 'Request'.
+The request will be sent in chunks due to its large size.
+Each chunk will be marked like 'Chunk[3/5]' following the format [chunk_number/total_number_of_chunks].
+I need you to acknowledge receiving each chunk with the response 'Chunk i out of N received'.
+
+Your overall job is to:
+- Extract information about the target blockchain project.
+- Include information like project name, homepage, logo URL, short description (up to 350 characters),
+  detailed description (up to 1000 characters), white paper link, social links, creation
+  and closing dates, market symbol, GitHub, and any other relevant information.
+
+When you receive all the chunks, I expect you to produce the resulting JSON.
+
+`
 
 func NewClient() (*Client, error) {
 	c := &Client{}
@@ -67,7 +69,10 @@ func NewClient() (*Client, error) {
 	client := openai.NewClient(openaiToken)
 	c.chatgpt = client
 
-	pin.D("init ChatGPT request <<< ", initPrompt)
+	pre := task + "\n" +
+		"Here is the schema for a JSON that you will need to use to produce results I request: \n"
+	initPrompt := pre + schema
+	pin.D("init ChatGPT request <<< ", pre)
 
 	// Create a chat completion request using the translation prompt chunks
 	resp, err := client.CreateChatCompletion(
