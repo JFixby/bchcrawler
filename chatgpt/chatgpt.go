@@ -7,8 +7,6 @@ import (
 	"io/ioutil"
 	"path/filepath"
 	"strings"
-
-	openai "github.com/sashabaranov/go-openai"
 )
 
 var client *Client = nil
@@ -136,21 +134,21 @@ func sendToOpenAI(prompt string) (string, error) {
 	pin.D("Request size is", len(prompt))
 
 	// Split the user's prompt into smaller chunks to fit within the model's constraints
+	var resp = ""
+	var err error
 
-	var resp openai.ChatCompletionResponse
 	promptChunks := splitIntoChunks(prompt, maxTokens)
 	// Iterate over prompt chunks and add them as user messages
 
 	for i, chunk := range promptChunks {
 		prefix := fmt.Sprintf("Chunk[%v/%v] ", i+1, len(promptChunks))
-		client.SendMessage(prefix + chunk)
+		resp, err = client.SendMessage(prefix + chunk)
+		if err != nil {
+			return "", err
+		}
 	}
 
-	// Extract the result from the response
-	if len(resp.Choices) == 0 {
-		return "", nil
-	}
-	result := resp.Choices[0].Message.Content
+	resp, err = client.SendMessage("Now give me the resulting json as requested using the schema provided.")
 
-	return result, nil
+	return resp, err
 }

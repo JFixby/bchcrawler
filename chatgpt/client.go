@@ -14,7 +14,104 @@ type Client struct {
 	chatgpt *openai.Client
 }
 
-const schema = "\"schema\": {\n    \"Name\": {\n      \"type\": \"string\",\n      \"constraints\": {\n        \"type\": \"string\",\n        \"length\": {\n          \"maximum\": null\n        },\n        \"presence\": false\n      },\n      \"name\": \"Name\",\n      \"visible\": true,\n      \"width\": 200\n    },\n    \"ProfileType\": {\n      \"type\": \"options\",\n      \"name\": \"ProfileType\",\n      \"constraints\": {\n        \"type\": \"string\",\n        \"presence\": false,\n        \"inclusion\": [\n          \"Company\",\n          \"DAO\",\n          \"NFT Collection\",\n          \"Unknown\"\n        ]\n      },\n      \"optionColors\": {},\n      \"order\": 0,\n      \"visible\": true,\n      \"width\": 125\n    },\n    \"Domain\": {\n      \"type\": \"string\",\n      \"constraints\": {\n        \"type\": \"string\",\n        \"length\": {\n          \"maximum\": null\n        },\n        \"presence\": false\n      },\n      \"name\": \"Domain\",\n      \"order\": 4,\n      \"visible\": true,\n      \"width\": 200\n    },\n    \"Short Description\": {\n      \"type\": \"string\",\n      \"constraints\": {\n        \"type\": \"string\",\n        \"length\": {\n          \"maximum\": null\n        },\n        \"presence\": false\n      },\n      \"name\": \"Short Description\",\n      \"order\": 5,\n      \"visible\": true,\n      \"width\": 200\n    },\n    \"Long Description\": {\n      \"type\": \"string\",\n      \"constraints\": {\n        \"type\": \"string\",\n        \"length\": {\n          \"maximum\": null\n        },\n        \"presence\": false\n      },\n      \"name\": \"Long Description\",\n      \"order\": 6,\n      \"visible\": true,\n      \"width\": 200\n    },\n    \"Twitter Link\": {\n      \"type\": \"string\",\n      \"constraints\": {\n        \"type\": \"string\",\n        \"length\": {\n          \"maximum\": null\n        },\n        \"presence\": false\n      },\n      \"name\": \"Twitter Link\",\n      \"order\": 7,\n      \"visible\": true,\n      \"width\": 292\n    },\n    \"Discord Link\": {\n      \"type\": \"string\",\n      \"constraints\": {\n        \"type\": \"string\",\n        \"length\": {\n          \"maximum\": null\n        },\n        \"presence\": false\n      },\n      \"name\": \"Discord Link\",\n      \"order\": 8,\n      \"visible\": true,\n      \"width\": 200\n    },\n    \"Documentation Link\": {\n      \"type\": \"string\",\n      \"constraints\": {\n        \"type\": \"string\",\n        \"length\": {\n          \"maximum\": null\n        },\n        \"presence\": false\n      },\n      \"name\": \"Documentation Link\",\n      \"order\": 9,\n      \"visible\": true,\n      \"width\": 200\n    },\n    \"Public Status\": {\n      \"type\": \"options\",\n      \"name\": \"Public Status\",\n      \"constraints\": {\n        \"type\": \"string\",\n        \"presence\": false,\n        \"inclusion\": [\n          \"Ded / Inactive\",\n          \"Live Outside of Bera\",\n          \"Live on TestNet\",\n          \"Officially Annouced\",\n          \"Rumoured\"\n        ]\n      },\n      \"optionColors\": {},\n      \"order\": 2,\n      \"visible\": true,\n      \"width\": 200\n    },\n    \"Blog Link\": {\n      \"type\": \"string\",\n      \"constraints\": {\n        \"type\": \"string\",\n        \"length\": {\n          \"maximum\": null\n        },\n        \"presence\": false\n      },\n      \"name\": \"Blog Link\",\n      \"order\": 10,\n      \"visible\": true,\n      \"width\": 200\n    },\n    \"Logo\": {\n      \"type\": \"attachment\",\n      \"name\": \"Logo\",\n      \"constraints\": {\n        \"type\": \"array\",\n        \"presence\": false\n      },\n      \"order\": 3,\n      \"visible\": true,\n      \"width\": 103\n    },\n    \"Live\": {\n      \"type\": \"boolean\",\n      \"constraints\": {\n        \"type\": \"boolean\",\n        \"presence\": false\n      },\n      \"name\": \"Live\",\n      \"order\": 11,\n      \"visible\": true,\n      \"width\": 126\n    },\n    \"onMarketMap\": {\n      \"type\": \"boolean\",\n      \"name\": \"onMarketMap\",\n      \"constraints\": {\n        \"type\": \"boolean\",\n        \"presence\": false\n      },\n      \"order\": 16,\n      \"visible\": false,\n      \"width\": 132\n    },\n    \"marketMapVersion\": {\n      \"type\": \"string\",\n      \"constraints\": {\n        \"type\": \"string\",\n        \"length\": {\n          \"maximum\": null\n        },\n        \"presence\": false\n      },\n      \"name\": \"marketMapVersion\",\n      \"order\": 17,\n      \"visible\": true,\n      \"width\": 113\n    },\n    \"MainProductType\": {\n      \"type\": \"options\",\n      \"constraints\": {\n        \"type\": \"string\",\n        \"presence\": false,\n        \"inclusion\": [\n          \"DEX\",\n          \"Game\",\n          \"Incubator\",\n          \"L1\",\n          \"Lending\",\n          \"Music\",\n          \"Name Service\",\n          \"Investor\",\n          \"Memecoin\",\n          \"Podcast\",\n          \"NFTs\",\n          \"NFT platform\",\n          \"Inscriptions\",\n          \"Aggregator\",\n          \"Launch Pad\",\n          \"Infra\"\n        ]\n      },\n      \"optionColors\": {},\n      \"name\": \"MainProductType\",\n      \"order\": 1,\n      \"visible\": true,\n      \"width\": 163\n    }\n  }"
+const schema = `
+{
+  "Name": {
+    "type": "string",
+    "constraints": {
+      "type": "string"
+    }
+  },
+  "ProfileType": {
+    "type": "options",
+    "constraints": {
+      "type": "string",
+      "inclusion": ["Company", "DAO", "NFT Collection", "Unknown"]
+    }
+  },
+  "Domain": {
+    "type": "string",
+    "constraints": {
+      "type": "string"
+    }
+  },
+  "Short Description": {
+    "type": "string",
+    "constraints": {
+      "type": "string"
+    }
+  },
+  "Long Description": {
+    "type": "string",
+    "constraints": {
+      "type": "string"
+    }
+  },
+  "Twitter Link": {
+    "type": "string",
+    "constraints": {
+      "type": "string"
+    }
+  },
+  "Discord Link": {
+    "type": "string",
+    "constraints": {
+      "type": "string"
+    }
+  },
+  "Documentation Link": {
+    "type": "string",
+    "constraints": {
+      "type": "string"
+    }
+  },
+  "Public Status": {
+    "type": "options",
+    "constraints": {
+      "type": "string",
+      "inclusion": ["Ded / Inactive", "Live Outside of Bera", "Live on TestNet", "Officially Announced", "Rumoured"]
+    }
+  },
+  "Blog Link": {
+    "type": "string",
+    "constraints": {
+      "type": "string"
+    }
+  },
+  "Logo": {
+    "type": "attachment",
+    "constraints": {
+      "type": "array"
+    }
+  },
+  "Live": {
+    "type": "boolean",
+    "constraints": {
+      "type": "boolean"
+    }
+  },
+  "onMarketMap": {
+    "type": "boolean",
+    "constraints": {
+      "type": "boolean"
+    },
+    "visible": false
+  },
+  "marketMapVersion": {
+    "type": "string",
+    "constraints": {
+      "type": "string"
+    }
+  },
+  "MainProductType": {
+    "type": "options",
+    "constraints": {
+      "type": "string",
+      "inclusion": ["DEX", "Game", "Incubator", "L1", "Lending", "Music", "Name Service", "Investor", "Memecoin", "Podcast", "NFTs", "NFT platform", "Inscriptions", "Aggregator", "Launch Pad", "Infra"]
+    }
+  }
+}
+`
 
 func (c *Client) SendMessage(chunk string) (string, error) {
 	pin.D("request >>> ", chunk)
@@ -53,6 +150,35 @@ Your overall job is to:
 
 When you receive all the chunks, I expect you to produce the resulting JSON.
 
+`
+
+const example = `
+{
+  "Name": "Example Project",
+  "ProfileType": "Company",
+  "Domain": "example.com",
+  "Short Description": "A short project description.",
+  "Long Description": "A more detailed project description.",
+  "Twitter Link": "https://twitter.com/example",
+  "Discord Link": "https://discord.com/example",
+  "Documentation Link": "https://docs.example.com",
+  "Public Status": "Live on TestNet",
+  "Blog Link": "https://blog.example.com",
+  "Logo": [
+    {
+      "url": "https://example.com/logo1.png",
+      "alt": "Logo 1"
+    },
+    {
+      "url": "https://example.com/logo2.png",
+      "alt": "Logo 2"
+    }
+  ],
+  "Live": true,
+  "onMarketMap": false,
+  "marketMapVersion": "v1.0",
+  "MainProductType": "DEX"
+}
 `
 
 func NewClient() (*Client, error) {
