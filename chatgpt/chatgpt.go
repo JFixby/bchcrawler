@@ -106,7 +106,8 @@ Example output is:
 func BuildPrompt(rawHTML, rawText string) string {
 
 	prompt := fmt.Sprintf(
-		"Request Begin: \n"+
+		"Here is the next blockchain project we need to crawl.\n"+
+			"Request Begin: \n"+
 			"Here is some text data that is in two sections: \n"+
 			"\n"+
 			"Section 1 is HTML: \n"+
