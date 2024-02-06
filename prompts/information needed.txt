@@ -1,0 +1,10 @@
+- project name
+- short project description up to 350 characters
+- long project description up to 1500 characters
+- project logo image url
+- project github
+- project socials like twitter, telegram, discord, linkedin, facebook and so on
+- project type like DEX, Explorer, Token, and so on
+- project release date
+- circulating supply of possible
+- market symbol maybe

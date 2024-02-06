@@ -8,8 +8,8 @@ import (
 
 func CrawlAndSave(url string) (string, error) {
 
-	return CrawlAndSaveHTML(url)
-	//return CrawlAndSaveJavaScript(url)
+	//return CrawlAndSaveHTML(url)
+	return CrawlAndSaveJavaScript(url)
 	//return CrawlAndSaveOmitter()
 }
 

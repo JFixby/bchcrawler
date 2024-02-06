@@ -2,6 +2,7 @@ package chatgpt
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/jfixby/bchcrawler/prompt"
 	"github.com/jfixby/pin"
 	"io/ioutil"
@@ -27,7 +28,7 @@ func ExtratProjectDescriptionUsingChatGPT(timestampFolderPath string) error {
 	}
 
 	// Extract relevant project data from HTML and text content
-	projectData, err := extractProjectData(string(htmlContent[0:0]), string(textContent))
+	projectData, err := extractProjectData(string(htmlContent[:]) + string(textContent))
 	if err != nil {
 		return err
 	}
@@ -53,24 +54,52 @@ func parseJSONString(jsonString string) (map[string]interface{}, error) {
 	return result, nil
 }
 
-func extractProjectData(rawHTML string, rawText string) (map[string]interface{}, error) {
+func extractProjectData(data string) (map[string]interface{}, error) {
 
-	prompt := BuildPrompt(rawHTML, rawText)
+	rawDataChunks := splitIntoChunks(data, maxTokens)
 
-	result, err := sendToOpenAI(prompt)
-	if err != nil {
-		return nil, err
+	for i, chunk := range rawDataChunks {
+		prefix := fmt.Sprintf("Chunk[%v/%v] ", i+1, len(rawDataChunks))
+		pin.D(prefix, len(chunk))
+
+		{
+			p := prompt.NewPrompt()
+			p.Add("BEGIN RAW DATA")
+			p.Add(chunk)
+			p.Add("END OF RAW DATA")
+			p.Add("Extract important blockchain project information from it.")
+			p.Add("Return results as a pretty printed JSON.")
+			p.Add("When json value is empty or null you can ignore it and exclude from the output result.")
+			p.Add("Look for the following data:")
+			p.AddFile("prompts/information needed.txt")
+
+			call := p.ToString()
+
+			result, err := sendToOpenAI(call)
+			if err != nil {
+				return nil, err
+			}
+			pin.D("result", result)
+
+		}
 	}
+	//return resp, err
+	//
+	//prompt := BuildPrompt(rawHTML, rawText)
+	//
+	//result, err := sendToOpenAI(prompt)
+	//if err != nil {
+	//	return nil, err
+	//}
+	//
+	//json, err := parseJSONString(result)
+	//if err != nil {
+	//	return nil, err
+	//}
 
-	json, err := parseJSONString(result)
-	if err != nil {
-		return nil, err
-	}
-
-	return json, nil
+	return nil, nil
 }
 
-// BuildPrompt generates a formatted prompt for ChatGPT based on rawHTML and rawText.
 func BuildPrompt(rawHTML, rawText string) string {
 
 	p := prompt.NewPrompt()
@@ -84,9 +113,6 @@ func BuildPrompt(rawHTML, rawText string) string {
 	p.Add("----")
 
 	p.Add("Read all the text data above.")
-	p.Add("Here is the list of parameters you are looking for")
-
-	p.AddFile("prompts/project params.txt")
 
 	p.Add("Find there the parameters and information of the project.")
 	p.Add("Return to me raw pretty printed JSON.")
@@ -123,10 +149,9 @@ func splitIntoChunks(text string, chunkSize int) []string {
 }
 
 // const maxTokens = 4096
-const maxTokens = 4096 - 800
+const maxTokens = 4096 - 1000
 
-func sendToOpenAI(prompt string) (string, error) {
-
+func sendToOpenAI(chunk string) (string, error) {
 	if client == nil {
 		var err error
 		client, err = NewClient()
@@ -134,24 +159,5 @@ func sendToOpenAI(prompt string) (string, error) {
 			return "", err
 		}
 	}
-
-	pin.D("", "Making request to ChatGPT:")
-	//pin.D("full prompt", prompt)
-	pin.D("Request size is", len(prompt))
-
-	// Split the user's prompt into smaller chunks to fit within the model's constraints
-	var resp = ""
-	var err error
-
-	promptChunks := splitIntoChunks(prompt, maxTokens)
-	// Iterate over prompt chunks and add them as user messages
-
-	for _, chunk := range promptChunks {
-		//prefix := fmt.Sprintf("Chunk[%v/%v] ", i+1, len(promptChunks))
-		resp, err = client.SendMessage(chunk)
-		if err != nil {
-			return "", err
-		}
-	}
-	return resp, err
+	return client.SendMessage(chunk)
 }

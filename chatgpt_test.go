@@ -10,7 +10,7 @@ import (
 
 // Set your OpenAI access token in environment variables "OPENAI_API_TOKEN=123..."
 func TestExtractProjectDescriptionJson(t *testing.T) {
-	timestampFolderPath := "raw/github.com/mellow-finance/mellow-strategy-sdk/2024-02-03-21-15"
+	timestampFolderPath := "raw/github.com/mellow-finance/mellow-strategy-sdk/2024-02-06-15-04"
 	err := chatgpt.ExtratProjectDescriptionUsingChatGPT(timestampFolderPath)
 	assert.NoError(t, err, "Unexpected error")
 
