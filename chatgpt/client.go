@@ -3,6 +3,7 @@ package chatgpt
 import (
 	"context"
 	"errors"
+	"github.com/jfixby/bchcrawler/prompt"
 	"github.com/jfixby/pin"
 	openai "github.com/sashabaranov/go-openai"
 	"os"
@@ -35,11 +36,6 @@ func (c *Client) SendMessage(chunk string) (string, error) {
 	return resp.Choices[0].Message.Content, nil
 }
 
-const initPrompt = `
-You are a helpful text data crawler.
-Your job is to extract information about the target blockchain project.
-`
-
 func NewClient() (*Client, error) {
 	c := &Client{}
 
@@ -53,6 +49,8 @@ func NewClient() (*Client, error) {
 
 	client := openai.NewClient(openaiToken)
 	c.chatgpt = client
+
+	initPrompt := BuildInitPrompt()
 
 	pin.D("init ChatGPT request <<< ", initPrompt)
 
@@ -77,4 +75,17 @@ func NewClient() (*Client, error) {
 	}
 
 	return c, nil
+}
+
+func BuildInitPrompt() string {
+	p := prompt.NewPrompt()
+	p.Add("You are a helpfull blockchain researcher")
+	p.Add("Your job is to read a lot of text and search for data")
+	//p.Add("Here is example of parameters you will be looking for:")
+	//p.AddFile("prompts/project params.txt")
+	//p.Add("Here are examples of outputs I need you to produce ideally:")
+	//p.AddFile("prompts/example proect jsons.txt")
+	p.Add("Is that clear? What is your job here?")
+
+	return p.ToString()
 }

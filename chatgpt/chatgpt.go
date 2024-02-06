@@ -2,7 +2,7 @@ package chatgpt
 
 import (
 	"encoding/json"
-	"fmt"
+	"github.com/jfixby/bchcrawler/prompt"
 	"github.com/jfixby/pin"
 	"io/ioutil"
 	"path/filepath"
@@ -70,61 +70,30 @@ func extractProjectData(rawHTML string, rawText string) (map[string]interface{},
 	return json, nil
 }
 
-const task = `
-I will send you my requests.
-The requests will be sent in chunks due to its large size.
- 
-Ypu need to find information like project name, homepage, logo URL,
-short description (up to 350 characters), detailed description (up to 1000 characters),
-white paper link, social links, creation and closing dates,
-market symbol, GitHub, and any other relevant information that is important to know
-about the project for investors.
-
-As a result you need to to produce the resulting JSON.
-
-Example output is:
-{
-  "ProjectName": "Example Project",
-  "ProfileType": "Company",
-  "HomePage": "example.com",
-  "ShortDescription": "A short project description less than 350 characters.",
-  "LongDescription": "A more detailed project description about 1000 characters.",
-  "Twitter Link": "https://twitter.com/example",
-  "Discord Link": "https://discord.com/example",
-  "Documentation Link": "https://docs.example.com",
-  "Github Link": "https://github.com/exampleproject",
-  "Public Status": "Live on TestNet",
-  "Blog Link": "https://blog.example.com",
-  "LogoUrl": "https://example.com/logo1.png",
-  "Live": true,
-  "OnCoinMarketMap": false,
-  "MainProductType": "DEX"
-}
-`
-
 // BuildPrompt generates a formatted prompt for ChatGPT based on rawHTML and rawText.
 func BuildPrompt(rawHTML, rawText string) string {
 
-	prompt := fmt.Sprintf(
-		"Here is the next blockchain project we need to crawl.\n"+
-			"Request Begin: \n"+
-			"Here is some text data that is in two sections: \n"+
-			"\n"+
-			"Section 1 is HTML: \n"+
-			"______ \n"+
-			"%s \n"+
-			"______ \n"+
-			"\n"+
-			"Section 2 is simple text: \n"+
-			"______ \n"+
-			"%s \n "+
-			"______\n"+
-			"Request End.\n"+
-			"\n"+
-			"Task: %v \n",
-		rawHTML, rawText, task)
+	p := prompt.NewPrompt()
+	p.Add("Discard previous data. Now we will process the next project")
+	p.Add("Here is some raw text data:")
+	p.Add("----")
+	p.Add(rawHTML)
+	p.Add("")
+	p.Add("")
+	p.Add(rawText)
+	p.Add("----")
 
-	return prompt
+	p.Add("Read all the text data above.")
+	p.Add("Here is the list of parameters you are looking for")
+
+	p.AddFile("prompts/project params.txt")
+
+	p.Add("Find there the parameters and information of the project.")
+	p.Add("Return to me raw pretty printed JSON.")
+	p.Add("The json must include only parameters that you found.")
+	p.Add("If there is no information for a specific parameter you can skip it and ignore for now.")
+
+	return p.ToString()
 }
 
 // splitIntoChunks splits a string into chunks of the specified size
@@ -154,7 +123,7 @@ func splitIntoChunks(text string, chunkSize int) []string {
 }
 
 // const maxTokens = 4096
-const maxTokens = 4096 / 2
+const maxTokens = 4096 - 800
 
 func sendToOpenAI(prompt string) (string, error) {
 
@@ -177,9 +146,9 @@ func sendToOpenAI(prompt string) (string, error) {
 	promptChunks := splitIntoChunks(prompt, maxTokens)
 	// Iterate over prompt chunks and add them as user messages
 
-	for i, chunk := range promptChunks {
-		prefix := fmt.Sprintf("Chunk[%v/%v] ", i+1, len(promptChunks))
-		resp, err = client.SendMessage(prefix + chunk)
+	for _, chunk := range promptChunks {
+		//prefix := fmt.Sprintf("Chunk[%v/%v] ", i+1, len(promptChunks))
+		resp, err = client.SendMessage(chunk)
 		if err != nil {
 			return "", err
 		}

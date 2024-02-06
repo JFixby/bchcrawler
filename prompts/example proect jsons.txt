@@ -1,0 +1,47 @@
+{
+  "project_name": "Ethereum",
+  "short_description": "World's leading programmable blockchain.",
+  "long_description": "Ethereum is a decentralized platform that enables developers to build and deploy smart contracts and decentralized applications (DApps). It operates on a blockchain-based network and facilitates the creation of digital assets and tokens. Ethereum's versatility and robust infrastructure have made it a cornerstone of the blockchain ecosystem.",
+  "founders": "Vitalik Buterin",
+  "launch_date": "July 30, 2015",
+  "website_url": "https://ethereum.org",
+  "whitepaper_url": "https://ethereum.org/whitepaper",
+  "blockchain_type": "Public",
+  "consensus_mechanism": "Proof of Work (PoW)",
+  "token_symbol": "ETH",
+  "total_supply": "114,109,314 ETH",
+  "github_repo_url": "https://github.com/ethereum/go-ethereum",
+  "community_links": "https://reddit.com/r/ethereum"
+}
+
+{
+  "project_name": "Bitcoin",
+  "short_description": "The first decentralized cryptocurrency.",
+  "long_description": "Bitcoin is a decentralized digital currency, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries. Transactions are verified by network nodes through cryptography and recorded in a public distributed ledger called a blockchain.",
+  "founders": "Satoshi Nakamoto",
+  "launch_date": "January 3, 2009",
+  "website_url": "https://bitcoin.org",
+  "whitepaper_url": "https://bitcoin.org/bitcoin.pdf",
+  "blockchain_type": "Public",
+  "consensus_mechanism": "Proof of Work (PoW)",
+  "token_symbol": "BTC",
+  "total_supply": "21,000,000 BTC",
+  "github_repo_url": "https://github.com/bitcoin/bitcoin",
+  "community_links": "https://www.reddit.com/r/Bitcoin/"
+}
+
+{
+  "project_name": "Binance Coin",
+  "short_description": "The cryptocurrency used on the Binance exchange.",
+  "long_description": "Binance Coin (BNB) is a cryptocurrency used to pay fees on the Binance cryptocurrency exchange. Binance Coin was initially issued as an ERC-20 token running on the Ethereum blockchain, but it has since become the native coin of the Binance Chain. BNB can be used to pay for trading fees, transaction fees, listing fees, and any other fees on the Binance exchange.",
+  "founders": "Changpeng Zhao (CZ)",
+  "launch_date": "July 25, 2017",
+  "website_url": "https://www.binance.com",
+  "whitepaper_url": "https://www.binance.com/resources/ico/Binance_WhitePaper_en.pdf",
+  "blockchain_type": "Public",
+  "consensus_mechanism": "Proof of Stake (PoS)",
+  "token_symbol": "BNB",
+  "total_supply": "170,532,785 BNB",
+  "github_repo_url": null,
+  "community_links": "https://www.reddit.com/r/binance/"
+}

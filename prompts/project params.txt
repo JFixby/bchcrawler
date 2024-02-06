@@ -1,0 +1,66 @@
+    Project Name:
+        Example Value: "Ethereum"
+        Description: Name of the blockchain project. Should be a string.
+        JSON Tag: "project_name"
+
+    Short Description:
+        Example Value: "World's leading programmable blockchain."
+        Description: Brief description of the project's purpose or functionality, limited to 350 characters.
+        JSON Tag: "short_description"
+
+    Long Description:
+        Example Value: "Ethereum is a decentralized platform that enables developers to build and deploy smart contracts and decentralized applications (DApps). It operates on a blockchain-based network and facilitates the creation of digital assets and tokens. Ethereum's versatility and robust infrastructure have made it a cornerstone of the blockchain ecosystem."
+        Description: Detailed description of the project's purpose or functionality, limited to 1500 characters.
+        JSON Tag: "long_description"
+
+    Founder(s):
+        Example Value: "Vitalik Buterin"
+        Description: Name(s) of the founder(s) of the project.
+        JSON Tag: "founders"
+
+    Launch Date:
+        Example Value: "July 30, 2015"
+        Description: Date when the project was launched or mainnet went live.
+        JSON Tag: "launch_date"
+
+    Website:
+        Example Value: "https://ethereum.org"
+        Description: Official website URL of the project.
+        JSON Tag: "website_url"
+
+    Whitepaper:
+        Example Value: "https://ethereum.org/whitepaper"
+        Description: URL to the project's whitepaper providing detailed information about its design and functionality.
+        JSON Tag: "whitepaper_url"
+
+    Blockchain Type:
+        Example Value: "Public"
+        Description: Type of blockchain (e.g., public, private, consortium).
+        JSON Tag: "blockchain_type"
+
+    Consensus Mechanism:
+        Example Value: "Proof of Work (PoW)"
+        Description: The method by which consensus is achieved in the network (e.g., PoW, PoS, DPoS).
+        JSON Tag: "consensus_mechanism"
+
+    Token Symbol:
+        Example Value: "ETH"
+        Description: Symbol representing the native cryptocurrency or token of the project.
+        JSON Tag: "token_symbol"
+
+    Total Supply:
+        Example Value: "114,109,314 ETH"
+        Description: Total amount of tokens or cryptocurrency that will ever be created.
+        JSON Tag: "total_supply"
+
+    GitHub Repository:
+        Example Value: "https://github.com/ethereum/go-ethereum"
+        Description: URL to the project's source code repository on GitHub.
+        JSON Tag: "github_repo_url"
+
+    Community Links:
+        Example Value: "https://reddit.com/r/ethereum"
+        Description: URLs to community forums, social media, or other platforms where the project's community engages.
+        JSON Tag: "community_links"
+
+These parameters offer both concise and detailed descriptions of blockchain projects, allowing users to quickly grasp the essential information while also providing in-depth insights when needed.
