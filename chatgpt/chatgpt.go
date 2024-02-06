@@ -28,7 +28,7 @@ func ExtratProjectDescriptionUsingChatGPT(timestampFolderPath string) error {
 	}
 
 	// Extract relevant project data from HTML and text content
-	projectData, err := extractProjectData(string(htmlContent[:]) + string(textContent))
+	projectData, err := extractProjectData(string(htmlContent[0:0]) + string(textContent))
 	if err != nil {
 		return err
 	}
@@ -57,6 +57,7 @@ func parseJSONString(jsonString string) (map[string]interface{}, error) {
 func extractProjectData(data string) (map[string]interface{}, error) {
 
 	rawDataChunks := splitIntoChunks(data, maxTokens)
+	var j = "{}"
 
 	for i, chunk := range rawDataChunks {
 		prefix := fmt.Sprintf("Chunk[%v/%v] ", i+1, len(rawDataChunks))
@@ -68,14 +69,17 @@ func extractProjectData(data string) (map[string]interface{}, error) {
 			p.Add(chunk)
 			p.Add("END OF RAW DATA")
 			p.Add("Extract important blockchain project information from it.")
-			p.Add("Return results as a pretty printed JSON.")
-			p.Add("When json value is empty or null you can ignore it and exclude from the output result.")
 			p.Add("Look for the following data:")
 			p.AddFile("prompts/information needed.txt")
+
+			p.Add("Here is the JSON that contains already known data:")
+			p.Add(j)
+			p.Add("Update it and return as output.")
 
 			call := p.ToString()
 
 			result, err := sendToOpenAI(call)
+			j = result
 			if err != nil {
 				return nil, err
 			}
@@ -92,12 +96,12 @@ func extractProjectData(data string) (map[string]interface{}, error) {
 	//	return nil, err
 	//}
 	//
-	//json, err := parseJSONString(result)
-	//if err != nil {
-	//	return nil, err
-	//}
+	json, err := parseJSONString(j)
+	if err != nil {
+		return nil, err
+	}
 
-	return nil, nil
+	return json, nil
 }
 
 func BuildPrompt(rawHTML, rawText string) string {
