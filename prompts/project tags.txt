@@ -1,0 +1,198 @@
+Insurance
+Metaverse
+Oracle
+Prediction Markets
+Smart Contract Platform
+Asset Management
+Derivatives
+Algorithmic Stablecoin
+Computation Platforms
+Gaming
+Meme Coins
+Privacy
+AMM
+Centralized Exchange
+Fiat-Backed Stablecoin
+Governance
+Identity
+IoT
+Layer 1
+Lending
+Play To Earn
+Sports
+Wallet
+Yield Aggregator
+Analytics
+Art
+Atomic Swaps
+Cryptocurrency
+DAO
+DeFi
+Developer Tooling
+Digitization
+Fan Token
+Internet of Things
+Layer 2
+Liquid Staking
+Media
+Move To Earn
+Music
+Payments
+Real World Assets
+Seigniorage
+Stablecoin
+Stablecoins
+Storage
+Wrapped Assets
+Account Abstraction
+Advertising
+Alleged SEC Securities
+Animal Racing
+Application Specific Chain
+Asset-backed Tokens
+Binance Launchpool
+Blockchain Infrastructure
+BRC-20
+Cross-chain Interoperability
+Crypto-Backed Stablecoin
+Currency
+Data
+Data Availability
+Decentralized Exchange (DEX)
+Decentralized Finance
+Decentralized Finance (DeFi)
+DeFi Index
+DePIN
+Digital Currencies
+Discord Bots
+Education
+Entertainment
+ETH 2.0 Staking
+Euro Stablecoin
+Exchange
+Farming as a Service
+Gambling
+General Purpose Smart Contract Platform
+Infrastructure
+Layer 0
+Liquid Staking Tokens
+Masternodes
+Metagovernance
+Modular Blockchain
+Options
+Private
+Private Computing
+Reddit Points
+Rollups
+Shared Network
+Shared Storage
+Social Token
+Tokenized Gold
+Tourism
+Value Transfer Coins
+Virtual World
+Yield
+Yield Farming
+A.I.
+Aave Tokens
+Access Control
+Accounts Receivable Factoring Platforms
+Active DAO
+Advertising Platforms
+Aggregator
+AI & Big Data
+Anchored Stablecoins
+Application Development
+Application Tokens
+Application Utilities
+Artificial Intelligence (AI)
+Asset Managers
+Asset Owners
+Auditing and Security
+Audits
+Automation
+BaaS
+BaaS (Other)
+Banking
+Big Data
+Block Explorer
+Blockchain Networks
+Blockchain Utilities
+BlueZilla
+Bridge Governance Tokens
+Bridges
+Broadcast
+Business Services
+Card Games
+CDP
+Celsius Bankruptcy Estate
+Centralized Applications (cApps)
+Centralized Finance (CeFi)
+Centralized Issuer
+Centralized Stablecoin Issuers
+Certification
+ChainGPT Pad
+Claim Tokens
+Client
+CLOB
+Cloud Platforms
+Cloud-Computing Intermediary
+Collateral Asset
+Collectible
+Collectibles & NFTs
+Collectibles and Digital Goods
+Commodity
+Commodity Collateralized Coins
+Communication and Messaging
+Communications & Social Media
+Consultancy and Advisory
+Consumer Infrastructure
+Content & Streaming
+Content Creation
+Content Creation (Video and Music)
+Content Delivery Network (CDN)
+Contentious Fork
+Contribution and Compensation
+Corporates
+Cosmos SDK
+Credit
+Credit Platform
+Credit Platform (Other)
+Credit/Lending
+Cross-chain Decentralized Exchanges
+Crowdsourced Computation Platform
+Crowdsourced Data Storage Platform
+Crypto Collateralized Stablecoins
+Crypto-Backed Stablecoins
+Cryptocurrencies / Crypto-commodities
+Culture
+Culture & Entertainment
+Custody
+Cybersecurity
+DAO (Other)
+DAO Builder
+DAO Governance Shares
+DAO Maker
+Data Analytics / Management
+Data Notorization Platforms
+Data Services
+Data Storage
+Database
+Decentralized Applications (dApps)
+Decentralized Exchange
+Decentralized Exchange (DEX) Token
+Decentralized Exchange Aggregator
+Decentralized Exchanges
+Decentralized Identity Solutions
+Decentralized Issuer
+Decentralized Lender
+Decentralized Lending
+Decentralized Science (DeSci)
+Default Privacy Coins
+DeFi 2.0
+Derivative
+Derivative Marketplaces
+Derivative Token
+Derivatives Trading
+Design Services
+Digital Art, Collectibles & Non-Fungible Tokens
