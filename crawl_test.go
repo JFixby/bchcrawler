@@ -3,20 +3,27 @@ package main
 import (
 	"bufio"
 	"github.com/jfixby/bchcrawler/crawl"
+	"github.com/jfixby/bchcrawler/util"
 	"github.com/jfixby/pin"
 	"os"
 	"testing"
 )
 
 func TestCrawlAndSave(t *testing.T) {
-	url := "https://github.com/mellow-finance/mellow-strategy-sdk" // Replace with your target URL
-	//url := "https://mellow.finance"
+	//url := "https://github.com/mellow-finance/mellow-strategy-sdk" // Replace with your target URL
+	url := "https://mellow.finance"
 	dir, err := crawl.CrawlAndSave(url)
 	if err != nil {
 		t.Errorf("Error occurred: %v", err)
 	}
-
 	pin.D("saved to", dir)
+
+	data := util.ReadFile(dir + "/raw.html")
+	//urls := crawl.FilterImageURLs(crawl.FindURLs(data))
+	//urls := crawl.Filter(crawl.FindURLs(data),crawl.ImageFilter)
+	urls := crawl.Filter(crawl.FindURLs(data), crawl.SocialNetworkFilter)
+	pin.D("urls", urls)
+
 }
 
 func TestCrawlListAndSave(t *testing.T) {
@@ -32,6 +39,26 @@ func TestCrawlListAndSave(t *testing.T) {
 		}
 
 		pin.D("saved to", dir)
+
+		data := util.ReadFile(dir + "/raw.html")
+		//urls := crawl.FilterImageURLs(crawl.FindURLs(data))
+		//urls := crawl.Filter(crawl.FindURLs(data),crawl.ImageFilter)
+		urls := crawl.Filter(crawl.FindURLs(data), crawl.TwitterFilter)
+		if len(urls) == 0 {
+			continue
+		}
+		twitterLogoHTMLURL := urls[0] + "/photo"
+
+		{
+			dir, err := crawl.CrawlAndSave(twitterLogoHTMLURL)
+			if err != nil {
+				t.Errorf("Error occurred: %v", err)
+			}
+
+			pin.D("twitter saved to", dir)
+		}
+		
+		pin.D("urls", urls)
 	}
 }
 
