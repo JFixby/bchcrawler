@@ -1,0 +1,60 @@
+/#vocs-content//ReferenceChevron Rightframes.jsChevron Right/reference/js/types/reference/js/getAddressForFid/reference/js/getFrame/reference/js/getFrameFlattened/reference/js/getFrameHtml/reference/js/getFrameMessage/reference/js/getUserDataForFid/reference/js/validateFrameMessageframes.js/next/serverChevron Right/reference/nextjs/getPreviousFrame/reference/nextjs/POSTframes.js/next/server - [react]Chevron Right/reference/react/types/reference/react/FrameContainer/reference/react/FrameButton/reference/react/FrameImage/reference/react/FrameInput/reference/react/parseFrameParams/reference/react/useFramesReducer/reference/react/validateActionSignature/reference/react/createPreviousFrameSearch/https://github.com/framesjs/frames.js
+SunMoon/https://github.com/framesjs/frames.js
+https://github.com/framesjs/frames.jsMenuIntroductionOn this pageChevron Right
+
+frames.js
+
+npmpnpmyarnnpm install frames.jsframes.js is the fastest way to make Frames./#quickstarthttps://github.com/framesjs/frames.js 
+
+What's in frames.js?/#whats-in-framesjs
+
+ ⚡️ Local frames debugger 🥳 Write Frames using React 🔋 Batteries included framework 🌴 Tree-shakeable & Lightweight 🚀 Library with all the functions 
+ 
+
+Quickstart/#quickstart
+
+ 1. Clone the frames.js starter template (with local debugger)/#1-clone-the-framesjs-starter-template-with-local-debugger
+
+ Run to clone the starter into a new folder called framesjs-starter
+
+ Copynpx degit github:framesjs/frames.js/examples/framesjs-starter#main framesjs-starter or https://github.com/framesjs/frames.js/tree/main/examples/framesjs-starter
+
+ Recent Updates/#recent-updates
+
+ v0.2.0 [Feb 6th]: Supports new action type "link" natively via <FrameButton href="..."> v0.1.1 [Feb 6th]: Add getFrameMessage v0.1.0 [Feb 5th]: New Debugger, getFrame signature changes 
+ 
+
+Alternatively, add frames.js to your existing project manually/#alternatively-add-framesjs-to-your-existing-project-manually
+
+ Start with frames.js in Next.js in two copy-pastes/#start-with-framesjs-in-nextjs-in-two-copy-pastes
+
+ Copy// ./app/page.tsx import { FrameContainer, FrameImage, FrameButton, getFrameMessage, useFramesReducer, getPreviousFrame, validateActionSignature, FrameInput } from "frames.js/next/server"; const reducer = (state, action) => ({ count: state.count + 1 }); export default async function Home(props) { const previousFrame = getPreviousFrame(props.searchParams); const frameMessage = await getFrameMessage(previousFrame.postBody); if (frameMessage && !frameMessage?.isValid) { throw new Error("Invalid frame payload"); } const [state, dispatch] = useFramesReducer(reducer, { count: 0 }, previousFrame); return ( <FrameContainer postUrl="/frames" state={state} previousFrame={previousFrame}> <FrameImage> <div tw="w-full h-full bg-slate-700 text-white justify-center items-center"> {state.count} </div> </FrameImage> <FrameButton onClick={dispatch}>{state.count}</FrameButton> </FrameContainer>; ); } Copy// ./app/frames/route.ts export { POST } from "frames.js/next/server"; 
+
+Community/#community
+
+ Check out the following places for more Frames-related content:
+
+ Join the https://warpcast.com/~/channel/frames-devs channel on Farcaster to ask questions Follow https://warpcast.com/frames & team (https://warpcast.com/df and https://warpcast.com/stephancill) on Farcaster for updates Star https://github.com/framesjs/frames.js on GitHub to show your support and keep track of updates Browse the https://github.com/davidfurlong/awesome-frames list of awesome Frames projects and resources 
+ 
+
+Local fully interactive Debugger & Frame validation/#local-fully-interactive-debugger--frame-validation
+
+ Or use the https://debugger.framesjs.org/debug. Running locally has the benefits of it working with natively with localhost.
+
+ Prefer to not use JSX?/#prefer-to-not-use-jsx
+
+ Use frames.js in Next.js using helper functions/#use-framesjs-in-nextjs-using-helper-functions
+
+ Copy// page that renders a frame // ./app/page.tsx import { Frame, getFrameFlattened } from "frames.js"; import type { Metadata } from "next"; // Declare the frame const initialFrame: Frame = { image: "https://picsum.photos/seed/frames.js/1146/600", version: "vNext", buttons: [ { label: "Random image", }, ], postUrl: `${process.env.NEXT_PUBLIC_HOST}/frames`, }; // Export Next.js metadata export const metadata: Metadata = { title: "Random Image Frame", description: "This is an example of a simple frame using frames.js", openGraph: { images: [ { url: "https://picsum.photos/seed/frames.js/600", }, ], }, other: getFrameFlattened(initialFrame), }; Copy// handle frame actions // ./app/frames/route.ts import { getFrameHtml, validateFrameMessage } from "frames.js"; import { NextRequest } from "next/server"; export async function POST(request: NextRequest) { const body = await request.json(); // Parse and validate the frame message const { isValid, message } = await validateFrameMessage(body); if (!isValid || !message) { return new Response("Invalid message", { status: 400 }); } const randomInt = Math.floor(Math.random() * 100); const imageUrlBase = `https://picsum.photos/seed/${randomInt}`; // Use the frame message to build the frame const frame = { version: "vNext", image: `${imageUrlBase}/1146/600`, buttons: [ { label: `Next (pressed by ${message.data.fid})`, }, ], ogImage: `${imageUrlBase}/600`, postUrl: `${process.env.NEXT_PUBLIC_HOST}/frames`, }; // Return the frame as HTML const html = getFrameHtml(frame); return new Response(html, { headers: { "Content-Type": "text/html", }, status: 200, }); } 
+
+Source Code/#source-code
+
+ The source code for frames.js is available on https://github.com/framesjs/frames.js
+
+ frames.js is distributed under an MIT License.
+
+ We welcome contributions from the community. If you would like to contribute, please open an issue or a pull request.
+
+ Feel free to ask any questions on https://warpcast.com/~/channel/frames-devs and tag https://warpcast.com/frames
+
+Last updated: 2/9/24, 8:58 AM/reference/js/types 

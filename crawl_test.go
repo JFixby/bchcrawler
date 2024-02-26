@@ -57,7 +57,7 @@ func TestCrawlListAndSave(t *testing.T) {
 
 			pin.D("twitter saved to", dir)
 		}
-		
+
 		pin.D("urls", urls)
 	}
 }

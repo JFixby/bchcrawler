@@ -1,0 +1,960 @@
+<html class="desktop chrome osx retina scrollable page-ready page-loaded"><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+	<!-- Meta Information-->
+	<title>Yup • Decentralized Social All-In-One. </title>
+	<meta name="keywords" content="NFTs,web3,social media,blockchain,crypto">
+	<meta name="author" content="Yup">
+	<meta property="og:image" content="https://yup.io/assets/thumbnail.png">
+	<meta property="og:site_name" content="Yup">
+	<meta name="Description" content="Open Social All-in-One. Get the best of Twitter, Farcaster, Lens, Mirror, NFTs, and more in one feed.">
+	<meta name="twitter:site" content="@yup_io">
+
+	<!-- Twitter -->
+	<meta property="twitter:image" content="https://yup.io/assets/thumbnail.png">
+	<!-- Compressed Styles -->
+	<link href="css/slides.min.css?424341" rel="stylesheet" type="text/css">
+
+	<link href="https://gilroy-web-fonts.s3.amazonaws.com/web-fonts/gilroy.css" rel="stylesheet">
+
+	<!-- Custom Styles -->
+	<link href="css/custom.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" async="" src="https://widget.intercom.io/widget/nenz9lls"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-9FR78CYXH3&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js"></script><script type="text/javascript" async="" src="https://cdn.segment.com/analytics.js/v1/3mbLaF8iWG4T0beCDzz7UfEl7oBSqEoU/analytics.min.js"></script><script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	<!-- Lottie -->
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+	<link href="assets/fontawesome/css/all.css" rel="stylesheet">
+
+
+	<!--
+		/**
+		* @license
+		* MyFonts Webfont Build ID 699233
+		*
+		* The fonts listed in this notice are subject to the End User License
+		* Agreement(s) entered into by the website owner. All other parties are
+		* explicitly restricted from using the Licensed Webfonts(s).
+		*
+		* You may obtain a valid license from one of MyFonts official sites.
+		* http://www.fonts.com
+		* http://www.myfonts.com
+		* http://www.linotype.com
+		*
+		*/
+		-->
+	<link rel="stylesheet" type="text/css" href="css/gilroy.css">
+
+	<!-- Segment Tracking -->
+	<script>
+		!function () {
+			var analytics = window.analytics = window.analytics || []; if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
+				analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on", "addSourceMiddleware", "addIntegrationMiddleware", "setAnonymousId", "addDestinationMiddleware"]; analytics.factory = function (e) { return function () { var t = Array.prototype.slice.call(arguments); t.unshift(e); analytics.push(t); return analytics } }; for (var e = 0; e < analytics.methods.length; e++) { var key = analytics.methods[e]; analytics[key] = analytics.factory(key) } analytics.load = function (key, e) { var t = document.createElement("script"); t.type = "text/javascript"; t.async = !0; t.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"; var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(t, n); analytics._loadOptions = e }; analytics.SNIPPET_VERSION = "4.13.1";
+				analytics.load("3mbLaF8iWG4T0beCDzz7UfEl7oBSqEoU");
+				analytics.page();
+			}
+		}();
+		function trackVideoPlay() { analytics.track('Explainer Video Play', { origin: 'landing-page' }) }
+	</script>
+
+	<!-- Intercom -->
+	<script>
+
+		window.intercomSettings = {
+			app_id: "nenz9lls"
+		};
+	</script>
+
+	<script>(function () { var w = window; var ic = w.Intercom; if (typeof ic === "function") { ic('reattach_activator'); ic('update', w.intercomSettings); } else { var d = document; var i = function () { i.c(arguments); }; i.q = []; i.c = function (args) { i.q.push(args); }; w.Intercom = i; var l = function () { var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://widget.intercom.io/widget/nenz9lls'; var x = d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); }; if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })(); </script>
+
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window.document, 'script', 'dataLayer', 'GTM-NQNRT4C');</script>
+	<!-- End Google Tag Manager -->
+
+	<!-- start Mixpanel -->
+	<script>(function (c, a) {
+			if (!a.__SV) {
+				var b = window; try { var d, m, j, k = b.location, f = k.hash; d = function (a, b) { return (m = a.match(RegExp(b + "=([^&]*)"))) ? m[1] : null }; f && d(f, "state") && (j = JSON.parse(decodeURIComponent(d(f, "state"))), "mpeditor" === j.action && (b.sessionStorage.setItem("_mpcehash", f), history.replaceState(j.desiredHash || "", c.title, k.pathname + k.search))) } catch (n) { } var l, h; window.mixpanel = a; a._i = []; a.init = function (b, d, g) {
+					function c(b, i) {
+						var a = i.split("."); 2 == a.length && (b = b[a[0]], i = a[1]); b[i] = function () {
+							b.push([i].concat(Array.prototype.slice.call(arguments,
+								0)))
+						}
+					} var e = a; "undefined" !== typeof g ? e = a[g] = [] : g = "mixpanel"; e.people = e.people || []; e.toString = function (b) { var a = "mixpanel"; "mixpanel" !== g && (a += "." + g); b || (a += " (stub)"); return a }; e.people.toString = function () { return e.toString(1) + ".people (stub)" }; l = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+					for (h = 0; h < l.length; h++)c(e, l[h]); var f = "set set_once union unset remove delete".split(" "); e.get_group = function () { function a(c) { b[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); e.push([d, call2]) } } for (var b = {}, d = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < f.length; c++)a(f[c]); return b }; a._i.push([b, d, g])
+				}; a.__SV = 1.2; b = c.createElement("script"); b.type = "text/javascript"; b.async = !0; b.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ?
+					MIXPANEL_CUSTOM_LIB_URL : "file:" === c.location.protocol && "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js"; d = c.getElementsByTagName("script")[0]; d.parentNode.insertBefore(b, d)
+			}
+		})(document, window.mixpanel || []);
+		mixpanel.init("fd8b4c2ef3374fa5d7963ab962b90920")</script>
+	<!-- end Mixpanel -->
+
+
+
+	<!-- jQuery 3.4.1 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Compressed Scripts -->
+	<script src="js/slides.min.js?424341" type="text/javascript"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-137858250-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-137858250-1');
+	</script>
+
+	<!-- Custom Scripts -->
+	<script src="js/custom.js" type="text/javascript"></script>
+
+	<script> window.disableOnSwipe = 0; </script>
+
+	<script>
+		var _rollbarConfig = {
+			accessToken: "888245e7243c4958bfd5c651b1e034f8",
+			captureUncaught: true,
+			captureUnhandledRejections: true,
+			payload: {
+				environment: "production:landing"
+			}
+		};
+		// Rollbar Snippet
+		!function (r) { var e = {}; function o(n) { if (e[n]) return e[n].exports; var t = e[n] = { i: n, l: !1, exports: {} }; return r[n].call(t.exports, t, t.exports, o), t.l = !0, t.exports } o.m = r, o.c = e, o.d = function (r, e, n) { o.o(r, e) || Object.defineProperty(r, e, { enumerable: !0, get: n }) }, o.r = function (r) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(r, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(r, "__esModule", { value: !0 }) }, o.t = function (r, e) { if (1 & e && (r = o(r)), 8 & e) return r; if (4 & e && "object" == typeof r && r && r.__esModule) return r; var n = Object.create(null); if (o.r(n), Object.defineProperty(n, "default", { enumerable: !0, value: r }), 2 & e && "string" != typeof r) for (var t in r) o.d(n, t, function (e) { return r[e] }.bind(null, t)); return n }, o.n = function (r) { var e = r && r.__esModule ? function () { return r.default } : function () { return r }; return o.d(e, "a", e), e }, o.o = function (r, e) { return Object.prototype.hasOwnProperty.call(r, e) }, o.p = "", o(o.s = 0) }([function (r, e, o) { "use strict"; var n = o(1), t = o(5); _rollbarConfig = _rollbarConfig || {}, _rollbarConfig.rollbarJsUrl = _rollbarConfig.rollbarJsUrl || "https://cdn.rollbar.com/rollbarjs/refs/tags/v2.19.3/rollbar.min.js", _rollbarConfig.async = void 0 === _rollbarConfig.async || _rollbarConfig.async; var a = n.setupShim(window, _rollbarConfig), l = t(_rollbarConfig); window.rollbar = n.Rollbar, a.loadFull(window, document, !_rollbarConfig.async, _rollbarConfig, l) }, function (r, e, o) { "use strict"; var n = o(2), t = o(3); function a(r) { return function () { try { return r.apply(this, arguments) } catch (r) { try { console.error("[Rollbar]: Internal error", r) } catch (r) { } } } } var l = 0; function i(r, e) { this.options = r, this._rollbarOldOnError = null; var o = l++; this.shimId = function () { return o }, "undefined" != typeof window && window._rollbarShims && (window._rollbarShims[o] = { handler: e, messages: [] }) } var s = o(4), d = function (r, e) { return new i(r, e) }, c = function (r) { return new s(d, r) }; function u(r) { return a((function () { var e = this, o = Array.prototype.slice.call(arguments, 0), n = { shim: e, method: r, args: o, ts: new Date }; window._rollbarShims[this.shimId()].messages.push(n) })) } i.prototype.loadFull = function (r, e, o, n, t) { var l = !1, i = e.createElement("script"), s = e.getElementsByTagName("script")[0], d = s.parentNode; i.crossOrigin = "", i.src = n.rollbarJsUrl, o || (i.async = !0), i.onload = i.onreadystatechange = a((function () { if (!(l || this.readyState && "loaded" !== this.readyState && "complete" !== this.readyState)) { i.onload = i.onreadystatechange = null; try { d.removeChild(i) } catch (r) { } l = !0, function () { var e; if (void 0 === r._rollbarDidLoad) { e = new Error("rollbar.js did not load"); for (var o, n, a, l, i = 0; o = r._rollbarShims[i++];)for (o = o.messages || []; n = o.shift();)for (a = n.args || [], i = 0; i < a.length; ++i)if ("function" == typeof (l = a[i])) { l(e); break } } "function" == typeof t && t(e) }() } })), d.insertBefore(i, s) }, i.prototype.wrap = function (r, e, o) { try { var n; if (n = "function" == typeof e ? e : function () { return e || {} }, "function" != typeof r) return r; if (r._isWrap) return r; if (!r._rollbar_wrapped && (r._rollbar_wrapped = function () { o && "function" == typeof o && o.apply(this, arguments); try { return r.apply(this, arguments) } catch (o) { var e = o; throw e && ("string" == typeof e && (e = new String(e)), e._rollbarContext = n() || {}, e._rollbarContext._wrappedSource = r.toString(), window._rollbarWrappedError = e), e } }, r._rollbar_wrapped._isWrap = !0, r.hasOwnProperty)) for (var t in r) r.hasOwnProperty(t) && (r._rollbar_wrapped[t] = r[t]); return r._rollbar_wrapped } catch (e) { return r } }; for (var p = "log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","), f = 0; f < p.length; ++f)i.prototype[p[f]] = u(p[f]); r.exports = { setupShim: function (r, e) { if (r) { var o = e.globalAlias || "Rollbar"; if ("object" == typeof r[o]) return r[o]; r._rollbarShims = {}, r._rollbarWrappedError = null; var l = new c(e); return a((function () { e.captureUncaught && (l._rollbarOldOnError = r.onerror, n.captureUncaughtExceptions(r, l, !0), e.wrapGlobalEventHandlers && t(r, l, !0)), e.captureUnhandledRejections && n.captureUnhandledRejections(r, l, !0); var a = e.autoInstrument; return !1 !== e.enabled && (void 0 === a || !0 === a || "object" == typeof a && a.network) && r.addEventListener && (r.addEventListener("load", l.captureLoad.bind(l)), r.addEventListener("DOMContentLoaded", l.captureDomContentLoaded.bind(l))), r[o] = l, l }))() } }, Rollbar: c } }, function (r, e, o) { "use strict"; function n(r, e, o, n) { r._rollbarWrappedError && (n[4] || (n[4] = r._rollbarWrappedError), n[5] || (n[5] = r._rollbarWrappedError._rollbarContext), r._rollbarWrappedError = null); var t = e.handleUncaughtException.apply(e, n); o && o.apply(r, n), "anonymous" === t && (e.anonymousErrorsPending += 1) } r.exports = { captureUncaughtExceptions: function (r, e, o) { if (r) { var t; if ("function" == typeof e._rollbarOldOnError) t = e._rollbarOldOnError; else if (r.onerror) { for (t = r.onerror; t._rollbarOldOnError;)t = t._rollbarOldOnError; e._rollbarOldOnError = t } e.handleAnonymousErrors(); var a = function () { var o = Array.prototype.slice.call(arguments, 0); n(r, e, t, o) }; o && (a._rollbarOldOnError = t), r.onerror = a } }, captureUnhandledRejections: function (r, e, o) { if (r) { "function" == typeof r._rollbarURH && r._rollbarURH.belongsToShim && r.removeEventListener("unhandledrejection", r._rollbarURH); var n = function (r) { var o, n, t; try { o = r.reason } catch (r) { o = void 0 } try { n = r.promise } catch (r) { n = "[unhandledrejection] error getting `promise` from event" } try { t = r.detail, !o && t && (o = t.reason, n = t.promise) } catch (r) { } o || (o = "[unhandledrejection] error getting `reason` from event"), e && e.handleUnhandledRejection && e.handleUnhandledRejection(o, n) }; n.belongsToShim = o, r._rollbarURH = n, r.addEventListener("unhandledrejection", n) } } } }, function (r, e, o) { "use strict"; function n(r, e, o) { if (e.hasOwnProperty && e.hasOwnProperty("addEventListener")) { for (var n = e.addEventListener; n._rollbarOldAdd && n.belongsToShim;)n = n._rollbarOldAdd; var t = function (e, o, t) { n.call(this, e, r.wrap(o), t) }; t._rollbarOldAdd = n, t.belongsToShim = o, e.addEventListener = t; for (var a = e.removeEventListener; a._rollbarOldRemove && a.belongsToShim;)a = a._rollbarOldRemove; var l = function (r, e, o) { a.call(this, r, e && e._rollbar_wrapped || e, o) }; l._rollbarOldRemove = a, l.belongsToShim = o, e.removeEventListener = l } } r.exports = function (r, e, o) { if (r) { var t, a, l = "EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(","); for (t = 0; t < l.length; ++t)r[a = l[t]] && r[a].prototype && n(e, r[a].prototype, o) } } }, function (r, e, o) { "use strict"; function n(r, e) { this.impl = r(e, this), this.options = e, function (r) { for (var e = function (r) { return function () { var e = Array.prototype.slice.call(arguments, 0); if (this.impl[r]) return this.impl[r].apply(this.impl, e) } }, o = "log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","), n = 0; n < o.length; n++)r[o[n]] = e(o[n]) }(n.prototype) } n.prototype._swapAndProcessMessages = function (r, e) { var o, n, t; for (this.impl = r(this.options); o = e.shift();)n = o.method, t = o.args, this[n] && "function" == typeof this[n] && ("captureDomContentLoaded" === n || "captureLoad" === n ? this[n].apply(this, [t[0], o.ts]) : this[n].apply(this, t)); return this }, r.exports = n }, function (r, e, o) { "use strict"; r.exports = function (r) { return function (e) { if (!e && !window._rollbarInitialized) { for (var o, n, t = (r = r || {}).globalAlias || "Rollbar", a = window.rollbar, l = function (r) { return new a(r) }, i = 0; o = window._rollbarShims[i++];)n || (n = o.handler), o.handler._swapAndProcessMessages(l, o.messages); window[t] = n, window._rollbarInitialized = !0 } } } }]);
+// End Rollbar Snippet
+	</script>
+
+	<!-- Fonts and Material Icons -->
+	<link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css?family=Nunito:100,300,400,500,600,800|Bungee|Bungee+Inline|Rubik:100,300,400,500,600|Material+Icons">
+
+	<style type="text/css">
+		.slides,
+		.slides p {
+			font-family: 'Gilroy-Regular', sans-serif;
+			font-weight: 100;
+		}
+
+		.slides h1,
+		.slides h2,
+		.slides h3,
+		.slides h4,
+		.slides h5,
+		.slides h6 {
+			font-family: 'Gilroy', sans-serif;
+			font-weight: 400;
+		}
+
+		.slides .button,
+		.slides .slides-form {
+			font-family: 'Gilroy', sans-serif;
+			font-weight: 100;
+		}
+
+		.title.mobile {
+			font-size: 1rem;
+		}
+		@keyframes upDown {
+				0%, 100% {
+						transform: translateY(0);
+				}
+				50% {
+						transform: translateY(-20px);
+				}
+		}
+
+		.up-down-animation {
+				animation: upDown 3s ease-in-out infinite;
+		}
+		#swappable-word {
+			opacity: 1;
+			transition: opacity 0.3s ease-in-out;
+		}
+		.fade-out {
+			opacity: 0;
+		}
+	</style>
+<meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
+
+<body class="slides scroll animated noPreload firstSlide stage-1" style="">
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQNRT4C" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<!-- SVG Library -->
+	<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+
+		<symbol id="logo" viewBox="0 0 106 31">
+			<title>Slides Framework</title>
+			<path d="M17.413 14.04c-.56-5.84-5.6-7-8.52-7-4.6 0-8.6 2.92-8.6 7.52 0 3 2.4 4.88 5.28 5.8 4.24 1.64 5.88 1.84 5.88 3.36 0 1.08-1.2 1.72-2.32 1.72-.28 0-2.24 0-2.52-2.04h-6.6c.6 5.84 5.68 7.36 9.04 7.36 4.92 0 9.04-2.88 9.04-7.76 0-4.8-4-5.92-7.76-6.96-1.76-.52-3.4-1.2-3.4-2.2 0-.6.48-1.48 1.88-1.48 1.96 0 2.04 1.2 2.08 1.68h6.52zm2.222 15.96h6.64v-29.6h-6.64v29.6zm9.662-24.56h6.64v-5.04h-6.64v5.04zm0 24.56h6.64v-22.2h-6.64v22.2zm32.782-29.6h-6.64v9.28c-.72-.72-2.6-2.64-6.52-2.64-5.64 0-11 4.28-11 11.8 0 6.68 4.4 11.88 11.12 11.88 4.48 0 6.08-2.2 6.72-3.12v2.4h6.32v-29.6zm-17.52 18.4c0-2.56 1.8-5.56 5.64-5.56 1.56 0 2.96.56 3.96 1.56 1 .96 1.64 2.32 1.64 3.92.08 1.64-.52 3.08-1.56 4.12s-2.52 1.68-4.12 1.68c-3.12 0-5.56-2.28-5.56-5.68v-.04zm42.502 2.4c.52-4.08-.32-7.64-3.12-10.64-2.08-2.2-5-3.52-8.4-3.52-6.76 0-11.64 5.72-11.64 11.92 0 6.6 5.4 11.76 11.76 11.76 2.28 0 4.48-.68 6.32-2 1.88-1.28 3.44-3.2 4.52-5.68h-6.8c-.8 1.16-1.92 2.08-4.04 2.08-2.6 0-4.84-1.56-5.12-3.92h16.52zm-16.44-5.04c.16-1.04 1.52-3.52 4.96-3.52s4.8 2.48 4.96 3.52h-9.92zm34.502-2.12c-.56-5.84-5.6-7-8.52-7-4.6 0-8.6 2.92-8.6 7.52 0 3 2.4 4.88 5.28 5.8 4.24 1.64 5.88 1.84 5.88 3.36 0 1.08-1.2 1.72-2.32 1.72-.28 0-2.24 0-2.52-2.04h-6.6c.6 5.84 5.68 7.36 9.04 7.36 4.92 0 9.04-2.88 9.04-7.76 0-4.8-4-5.92-7.76-6.96-1.76-.52-3.4-1.2-3.4-2.2 0-.6.48-1.48 1.88-1.48 1.96 0 2.04 1.2 2.08 1.68h6.52z"></path>
+		</symbol>
+
+		<symbol id="logo-icon" viewBox="0 0 50 41">
+			<title>Slides Framework</title>
+			<path d="M4,12h42c2.2,0,4,1.8,4,4v21c0,2.2-1.8,4-4,4H4c-2.2,0-4-1.8-4-4V16C0,13.8,1.8,12,4,12z"></path>
+			<path opacity="0.6" d="M45.5,9h-41C3.7,9,3,8.3,3,7.5v0C3,6.7,3.7,6,4.5,6h41C46.3,6,47,6.7,47,7.5v0C47,8.3,46.3,9,45.5,9z"></path>
+			<path opacity="0.4" d="M7.5,0h35C43.3,0,44,0.7,44,1.5v0C44,2.3,43.3,3,42.5,3h-35C6.7,3,6,2.3,6,1.5v0C6,0.7,6.7,0,7.5,0z"></path>
+		</symbol>
+
+		<symbol id="close-small" viewBox="0 0 11 11">
+			<path d="M6.914 5.5l3.793-3.793c.391-.391.391-1.023 0-1.414s-1.023-.391-1.414 0l-3.793 3.793-3.793-3.793c-.391-.391-1.023-.391-1.414 0s-.391 1.023 0 1.414l3.793 3.793-3.793 3.793c-.391.391-.391 1.023 0 1.414.195.195.451.293.707.293s.512-.098.707-.293l3.793-3.793 3.793 3.793c.195.195.451.293.707.293s.512-.098.707-.293c.391-.391.391-1.023 0-1.414l-3.793-3.793z"></path>
+		</symbol>
+
+		<symbol id="arrow-left" viewBox="0 0 29 56">
+			<path d="M28.7.3c.4.4.4 1 0 1.4l-26.3 26.3 26.3 26.3c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0l-27-27c-.4-.4-.4-1 0-1.4l27-27c.3-.3 1-.4 1.4 0z"></path>
+		</symbol>
+
+		<symbol id="arrow-right" viewBox="0 0 29 56">
+			<path d="M.3 55.7c-.4-.4-.4-1 0-1.4l26.3-26.3-26.3-26.3c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l27 27c.4.4.4 1 0 1.4l-27 27c-.3.3-1 .4-1.4 0z"></path>
+		</symbol>
+
+		<symbol id="back" viewBox="0 0 20 20">
+			<path d="M2.3 10.7l5 5c.4.4 1 .4 1.4 0s.4-1 0-1.4l-3.3-3.3h11.6c.6 0 1-.4 1-1s-.4-1-1-1h-11.6l3.3-3.3c.4-.4.4-1 0-1.4-.2-.2-.4-.3-.7-.3s-.5.1-.7.3l-5 5c-.2.2-.3.5-.3.7 0 .2.1.5.3.7z"></path>
+		</symbol>
+
+		<symbol id="menu" viewBox="0 0 18 18">
+			<path d="M16 5h-14c-.6 0-1-.4-1-1 0-.5.4-1 1-1h14c.5 0 1 .4 1 1s-.4 1-1 1zm-14 5h14c.5 0 1-.4 1-1 0-.5-.4-1-1-1h-14c-.6 0-1 .4-1 1s.4 1 1 1zm14 3h-14c-.5 0-1 .4-1 1 0 .5.4 1 1 1h14c.5 0 1-.4 1-1s-.4-1-1-1z"></path>
+		</symbol>
+
+		<symbol id="share" viewBox="0 0 18 18">
+			<path d="M16 8c-.6 0-1 .4-1 1v6h-12v-6c0-.6-.4-1-1-1s-1 .4-1 1v6c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-6c0-.6-.4-1-1-1zm-2.3-2.3c.4-.4.4-1 0-1.4l-4-4c-.4-.4-1-.4-1.4 0l-4 4c-.4.4-.4 1 0 1.4s1 .4 1.4 0l2.3-2.3v7.6c0 .6.4 1 1 1s1-.4 1-1v-7.6l2.3 2.3c.4.4 1 .4 1.4 0z"></path>
+		</symbol>
+
+		<symbol id="arrow-down" viewBox="0 0 24 24">
+			<path d="M12 18c-.2 0-.5-.1-.7-.3l-11-10c-.4-.4-.4-1-.1-1.4.4-.4 1-.4 1.4-.1l10.4 9.4 10.3-9.4c.4-.4 1-.3 1.4.1.4.4.3 1-.1 1.4l-11 10c-.1.2-.4.3-.6.3z"></path>
+		</symbol>
+
+		<symbol id="arrow-up" viewBox="0 0 24 24">
+			<path d="M11.9 5.9c.2 0 .5.1.7.3l11 10c.4.4.4 1 .1 1.4-.4.4-1 .4-1.4.1l-10.4-9.4-10.3 9.4c-.4.4-1 .3-1.4-.1-.4-.4-.3-1 .1-1.4l11-10c.1-.2.4-.3.6-.3z"></path>
+		</symbol>
+
+		<symbol id="arrow-top" viewBox="0 0 18 18">
+			<path d="M15.7 7.3l-6-6c-.4-.4-1-.4-1.4 0l-6 6c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l4.3-4.3v11.6c0 .6.4 1 1 1s1-.4 1-1v-11.6l4.3 4.3c.2.2.4.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4z"></path>
+		</symbol>
+
+		<symbol id="play" viewBox="0 0 30 30">
+			<path d="M7 30v-30l22 15z"></path>
+		</symbol>
+
+		<symbol id="chat" viewBox="0 0 18 18">
+			<path d="M5,17c-0.2,0-0.3,0-0.4-0.1C4.2,16.7,4,16.4,4,16v-2H2c-1.1,0-2-0.9-2-2V3c0-1.1,0.9-2,2-2h14c1.1,0,2,0.9,2,2v9 c0,1.1-0.9,2-2,2H9.3l-3.7,2.8C5.4,16.9,5.2,17,5,17z M2,12h3.5C5.8,12,6,12.2,6,12.5V14l2.4-1.8C8.6,12.1,8.8,12,9,12h7V3H2V12z M13,7H5C4.4,7,4,6.6,4,6s0.4-1,1-1h8c0.6,0,1,0.4,1,1S13.6,7,13,7z M13,10H5c-0.6,0-1-0.4-1-1s0.4-1,1-1h8c0.6,0,1,0.4,1,1 S13.6,10,13,10z"></path>
+		</symbol>
+
+		<symbol id="mail" viewBox="0 0 18 18">
+			<path d="M16 2h-14c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-10c0-1.1-.9-2-2-2zm0 2v.5l-7 4.3-7-4.4v-.4h14zm-14 10v-7.2l6.5 4c.1.1.3.2.5.2s.4-.1.5-.2l6.5-4v7.2h-14z"></path>
+		</symbol>
+
+		<symbol id="sound-on" viewBox="0 0 18 18">
+			<path d="M8.5,0.1C8.1-0.1,7.7,0,7.4,0.2L3.7,3H2C0.9,3,0,3.9,0,5v6c0,1.1,0.9,2,2,2h1.7l3.7,2.8C7.6,15.9,7.8,16,8,16 c0.2,0,0.3,0,0.4-0.1C8.8,15.7,9,15.4,9,15V1C9,0.6,8.8,0.3,8.5,0.1z M7,13l-2.4-1.8C4.4,11.1,4.2,11,4,11l-2,0l0-6h2 c0.2,0,0.4-0.1,0.6-0.2L7,3V13z M11.7,9.9l0.7,1.9C13.9,11.2,15,9.7,15,8c0-1.7-1.1-3.2-2.7-3.8l-0.7,1.9C12.5,6.4,13,7.2,13,8C13,8.9,12.5,9.6,11.7,9.9z M12.2,1.1l-0.3,2C14.3,3.5,16,5.6,16,8s-1.8,4.5-4.2,4.9l0.3,2C15.6,14.3,18,11.4,18,8C18,4.6,15.6,1.7,12.2,1.1z"></path>
+		</symbol>
+
+		<symbol id="sound-off" viewBox="0 0 18 18">
+			<path d="M15.9,8l1.8-1.8c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-1.8,1.8l-1.8-1.8c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4L13.1,8l-1.8,1.8 c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l1.8-1.8l1.8,1.8c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L15.9,8z M8.5,0.1C8.1-0.1,7.7,0,7.4,0.2L3.7,3H2C0.9,3,0,3.9,0,5v6c0,1.1,0.9,2,2,2h1.7l3.7,2.8C7.6,15.9,7.8,16,8,16 c0.2,0,0.3,0,0.4-0.1C8.8,15.7,9,15.4,9,15V1C9,0.6,8.8,0.3,8.5,0.1z M7,13l-2.4-1.8C4.4,11.1,4.2,11,4,11l-2,0l0-6h2 c0.2,0,0.4-0.1,0.6-0.2L7,3V13z"></path>
+		</symbol>
+
+		<!-- social -->
+		<symbol id="apple" viewBox="-1 1 24 24">
+			<path d="M17.6 13.8c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.3-4.4-2.4-1.9-.2-3.6 1.1-4.6 1.1-.9 0-2.4-1.1-4-1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.1 1.5 12.1 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 3.9-1s2.4 1 4 1 2.7-1.5 3.7-2.9c1.2-1.7 1.6-3.3 1.7-3.4-.1-.1-3.2-1.3-3.2-4.9zm-3.1-9c.8-1 1.4-2.4 1.2-3.8-1.2 0-2.7.8-3.5 1.8-.8.9-1.5 2.3-1.3 3.7 1.4.1 2.8-.7 3.6-1.7z"></path>
+		</symbol>
+
+		<symbol id="dribbble" viewBox="0 0 24 24">
+			<path d="M12 0c-6.7 0-12 5.3-12 12s5.3 12 12 12 12-5.3 12-12-5.3-12-12-12zm7.9 5.7c1.3 1.7 2.1 3.9 2.3 6.1-.4-.1-2.4-.4-4.7-.4-.8 0-1.5 0-2.3.1 0-.1-.1-.3-.3-.5l-.7-1.5c3.7-1.4 5.3-3.4 5.7-3.8zm-7.9-3.8c2.5 0 4.9.9 6.7 2.5-.3.4-1.9 2.3-5.2 3.6-1.6-2.9-3.3-5.3-3.7-5.9.6-.1 1.4-.2 2.2-.2zm-4.4 1c.4.6 2.1 3 3.7 5.8-4.4 1.2-8.2 1.2-9.2 1.2h-.1c.8-3.1 2.9-5.6 5.6-7zm-5.7 9.1v-.3h.3c1.2 0 5.6-.1 10.1-1.5l.8 1.6c-.1 0-.3 0-.4.1-5.1 1.6-7.9 6-8.3 6.7-1.6-1.7-2.5-4.1-2.5-6.6zm10.1 10.1c-2.3 0-4.4-.8-6.1-2.1.3-.5 2.4-4.4 7.9-6.3 1.3 3.6 2 6.7 2.1 7.6-1.2.6-2.6.8-3.9.8zm5.7-1.8c-.1-.8-.7-3.6-2-7.1.7-.1 1.3-.1 2-.1 2.1 0 3.7.4 4.1.5-.3 2.8-1.8 5.2-4.1 6.7z"></path>
+		</symbol>
+
+		<symbol id="facebook" viewBox="0 0 24 24">
+			<path d="M24 1.3v21.3c0 .7-.6 1.3-1.3 1.3h-6.1v-9.3h3.1l.5-3.6h-3.6v-2.2c0-1.1.3-1.8 1.8-1.8h1.9v-3.2c-.3 0-1.5-.1-2.8-.1-2.8 0-4.7 1.7-4.7 4.8v2.7h-3.1v3.6h3.1v9.2h-11.5c-.7 0-1.3-.6-1.3-1.3v-21.4c0-.7.6-1.3 1.3-1.3h21.3c.8 0 1.4.6 1.4 1.3z"></path>
+		</symbol>
+
+		<symbol id="facebook2" viewBox="0 0 512 512">
+			<path d="M288 176v-64c0-17.664 14.336-32 32-32h32v-80h-64c-53.024 0-96 42.976-96 96v80h-64v80h64v256h96v-256h64l32-80h-96z"></path>
+		</symbol>
+
+		<symbol id="fb-like" viewBox="0 0 20 20">
+			<path d="M0 8v12h5v-12h-5zm2.5 10.8c-.4 0-.8-.3-.8-.8 0-.4.3-.8.8-.8s.8.3.8.8c0 .4-.4.8-.8.8zm3.5-.8h9.5c1.1 0 1.7-1 1.7-1.7 0-.3-.4-1-.4-1 1.4-.3 1.7-1.2 1.7-1.7-.1-.5-.3-.9-.5-1 1-.4 1.5-1.1 1.4-1.9-.1-.8-1-1.5-1-1.5 1-.6.9-1.5.9-1.5-.3-1.3-1.5-1.7-1.7-1.7h-5.6s.3-.5.3-2.4-1.3-3.6-2.6-3.6c0 0-.7.1-1 .3v3.5l-2.7 4.4v9.8z"></path>
+		</symbol>
+
+		<symbol id="googlePlus" viewBox="0 1 24 24">
+			<path d="M7.8 13.5h4.6c-.6 2-2.5 3.4-4.6 3.4-2.7 0-4.9-2.2-4.9-4.9s2.2-4.9 4.9-4.9c1.1 0 2.1.3 3 1l1.8-2.4c-1.4-1.1-3-1.6-4.8-1.6-4.3 0-7.9 3.5-7.9 7.9s3.5 7.9 7.9 7.9 7.9-3.5 7.9-7.9v-1.5h-7.9v3zM21.7 11v-2.2h-2v2.2h-2.2v2h2.2v2.2h2v-2.2h2.2v-2z"></path>
+		</symbol>
+
+		<symbol id="instagram" viewBox="0 0 20 20">
+			<circle cx="10" cy="10" r="3.3"></circle>
+			<path d="M13,0H7C2.2,0,0,2.2,0,7v6c0,4.8,2.1,7,7,7h6c4.8,0,7-2.2,7-7V7C20,2.2,17.9,0,13,0z M10,15.1c-2.8,0-5.1-2.3-5.1-5.1 S7.2,4.9,10,4.9s5.1,2.3,5.1,5.1S12.8,15.1,10,15.1z M15.3,5.9c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2 C16.5,5.3,16,5.9,15.3,5.9z"></path>
+		</symbol>
+
+		<symbol id="behance" viewBox="0 0 511.958 511.958">
+			<path d="M210.624 240.619c10.624-5.344 18.656-11.296 24.16-17.728 9.792-11.584 14.624-26.944 14.624-45.984 0-18.528-4.832-34.368-14.496-47.648-16.128-21.632-43.424-32.704-82.016-33.28h-152.896v312.096h142.56c16.064 0 30.944-1.376 44.704-4.192 13.76-2.848 25.664-8.064 35.744-15.68 8.96-6.624 16.448-14.848 22.4-24.544 9.408-14.656 14.112-31.264 14.112-49.76 0-17.92-4.128-33.184-12.32-45.728-8.288-12.544-20.448-21.728-36.576-27.552zm-147.552-90.432h68.864c15.136 0 27.616 1.632 37.408 4.864 11.328 4.704 16.992 14.272 16.992 28.864 0 13.088-4.32 22.24-12.864 27.392-8.608 5.152-19.776 7.744-33.472 7.744h-76.928v-68.864zm108.896 198.24c-7.616 3.68-18.336 5.504-32.064 5.504h-76.832v-83.232h77.888c13.568.096 24.128 1.888 31.68 5.248 13.44 6.08 20.128 17.216 20.128 33.504 0 19.2-6.912 32.128-20.8 38.976zM327.168 110.539h135.584v38.848h-135.584zM509.856 263.851c-2.816-18.08-9.024-33.984-18.688-47.712-10.592-15.552-24.032-26.944-40.384-34.144-16.288-7.232-34.624-10.848-55.04-10.816-34.272 0-62.112 10.72-83.648 32-21.472 21.344-32.224 52.032-32.224 92.032 0 42.656 11.872 73.472 35.744 92.384 23.776 18.944 51.232 28.384 82.4 28.384 37.728 0 67.072-11.232 88.032-33.632 13.408-14.144 20.992-28.064 22.656-41.728h-62.464c-3.616 6.752-7.808 12.032-12.608 15.872-8.704 7.04-20.032 10.56-33.92 10.56-13.216 0-24.416-2.912-33.76-8.704-15.424-9.28-23.488-25.536-24.512-48.672h170.464c.256-19.936-.384-35.264-2.048-45.824zm-166.88 5.984c2.24-15.008 7.68-26.912 16.32-35.712 8.64-8.768 20.864-13.184 36.512-13.216 14.432 0 26.496 4.128 36.32 12.416 9.696 8.352 15.168 20.48 16.288 36.512h-105.44z"></path>
+		</symbol>
+
+		<symbol id="linkedin" viewBox="0 0 24 24">
+			<path d="M5.9 21.9h-4.7v-14.2h4.7v14.2zm-2.3-16.1c-1.6 0-2.6-1.1-2.6-2.5s1-2.5 2.7-2.5c1.6 0 2.6 1 2.6 2.5-.1 1.4-1.2 2.5-2.7 2.5zm19.2 16.1h-4.7v-7.6c0-2-.7-3.3-2.3-3.3-1.3 0-2.1.9-2.5 1.7-.1.3-.1.8-.1 1.2v7.9h-4.7v-14.1h4.7v2c.7-.9 1.7-2.3 4.3-2.3 3.1 0 5.5 2.1 5.5 6.4v8.2h-.2z"></path>
+		</symbol>
+
+		<symbol id="medium" viewBox="0 0 130.8 104">
+			<path d="M15.5 21.2c.2-1.6-.5-3.2-1.7-4.3l-12.1-14.7v-2.2h38l29.3 64.4 25.8-64.4h36.2v2.2l-10.5 10c-.9.7-1.3 1.8-1.2 2.9v73.7c0 1.1.3 2.2 1.2 2.9l10.2 10v2.2h-51.3v-2.2l10.6-10.2c1-1 1-1.3 1-2.9v-59.6l-29.4 74.7h-4l-34.2-74.7v50.3c0 2.2.4 4.2 1.9 5.7l13.7 16.8v2.2h-39v-2.2l13.8-16.7c1.5-1.5 1.8-3.3 1.8-5.7l-.1-58.2z"></path>
+		</symbol>
+
+		<symbol id="twitter" viewBox="0 1 24 23">
+			<path d="M21.5 7.6v.6c0 6.6-5 14.1-14 14.1-2.8 0-5.4-.8-7.6-2.2l1.2.1c2.3 0 4.4-.8 6.1-2.1-2.2 0-4-1.5-4.6-3.4.3.1.6.1.9.1.5 0 .9-.1 1.3-.2-2.1-.6-3.8-2.6-3.8-5 .7.4 1.4.6 2.2.6-1.3-.9-2.2-2.4-2.2-4.1 0-.9.2-1.8.7-2.5 2.4 3 6.1 5 10.2 5.2-.1-.4-.1-.7-.1-1.1 0-2.7 2.2-5 4.9-5 1.4 0 2.7.6 3.6 1.6 1-.3 2.1-.7 3-1.3-.4 1.2-1.1 2.1-2.2 2.7 1-.1 1.9-.4 2.8-.8-.6 1.1-1.4 2-2.4 2.7z"></path>
+		</symbol>
+
+		<symbol id="tumblr" viewBox="0 0 23 23">
+			<path d="M12.573 4.94v-4.94h-3.188c-.072.183-.11.4-.11.622-.034.107-.072.184-.072.293-.328 1.829-1.28 3.11-2.892 3.807-.476.218-.914.253-1.39.218v3.987h2.342c.039 5.603.039 8.493.039 8.64v.332c.294 2.449 1.573 3.914 3.843 4.463.914.257 1.901.366 2.892.366 1.279-.036 2.525-.256 3.771-.659v-4.685c-.731.22-1.395.402-1.977.583-1.135.333-2.087.113-2.857-.619-.073-.11-.183-.257-.221-.403-.106-.586-.178-1.206-.178-1.795v-6.222h5.083v-3.988h-5.085z"></path>
+		</symbol>
+
+		<symbol id="xing" viewBox="0 0 24 24">
+			<path d="M3.647 4.74c-.208 0-.384.073-.472.216-.091.148-.077.338.02.531l2.34 4.051v.02l-3.678 6.49c-.096.191-.091.383 0 .531.088.142.244.236.452.236h3.461c.518 0 .767-.349.944-.669l3.737-6.608-2.38-4.15c-.172-.307-.433-.649-.964-.649h-3.46zm14.542-4.74c-.517 0-.741.326-.927.659l-7.702 13.658 4.918 9.023c.172.307.437.659.967.659h3.457c.208 0 .371-.079.459-.221.092-.148.09-.343-.007-.535l-4.88-8.915v-.023l7.664-13.551c.096-.191.098-.386.007-.534-.088-.142-.252-.221-.46-.221h-3.496z"></path>
+		</symbol>
+
+		<symbol id="youtube" viewBox="0 0 24 24">
+			<path d="M23.6 6.3c-.3-1.2-1.4-2.2-2.6-2.3-3-.3-6-.3-9-.3s-6 0-9 .3c-1.2.1-2.3 1.1-2.6 2.3-.4 1.8-.4 3.8-.4 5.7 0 1.9 0 3.9.4 5.7.3 1.2 1.4 2.2 2.6 2.3 3 .3 6 .3 9 .3s6 0 9-.3c1.3-.1 2.3-1.1 2.6-2.4.4-1.7.4-3.7.4-5.6 0-1.9 0-3.9-.4-5.7zm-14.1 9v-6.6l6.5 3.3-6.5 3.3z"></path>
+		</symbol>
+
+		<symbol id="discord" viewBox="0 0 1000 1000">
+			<path d=" M 193 42C 193 42 193 42 193 42C 193 42 807 42 807 42C 859 42 901 84 901 136C 901 136 901 958 901 958C 901 958 802 871 802 871C 802 871 747 820 747 820C 747 820 688 765 688 765C 688 765 712 850 712 850C 712 850 193 850 193 850C 141 850 99 808 99 756C 99 756 99 136 99 136C 99 84 141 42 193 42M 429 255C 429 255 429 255 429 255C 422 255 363 257 301 304C 301 304 235 423 235 571C 235 571 274 637 375 640C 375 640 392 620 406 602C 347 585 326 548 326 548C 326 548 330 551 338 556C 339 556 339 557 340 557C 342 558 343 559 344 560C 356 566 367 571 378 575C 396 582 419 590 445 595C 479 601 520 604 564 595C 585 592 607 585 630 576C 646 570 664 561 683 549C 683 549 660 586 600 603C 614 620 630 640 630 640C 731 637 770 571 770 571C 770 423 704 304 704 304C 638 254 576 255 576 255C 576 255 569 263 569 263C 647 287 683 321 683 321C 636 295 589 282 545 277C 512 273 481 274 453 278C 450 278 448 278 445 279C 429 280 390 286 341 308C 324 315 314 321 314 321C 314 321 352 285 435 261C 435 261 430 255 430 255C 430 255 430 255 429 255M 417 426C 417 426 417 426 417 426C 443 426 464 449 464 477C 464 505 443 528 417 528C 391 528 370 505 370 477C 370 449 391 426 417 426M 584 426C 584 426 584 426 584 426C 610 426 631 449 631 477C 631 505 610 528 584 528C 559 528 538 505 538 477C 538 449 558 426 584 426"></path>
+		</symbol>
+
+	</svg>
+
+
+	<!--JS Tilt -->
+	<script src="https://cdn.rawgit.com/gijsroge/tilt.js/38991dd7/dest/tilt.jquery.js"></script>
+	<script>
+		$(function () {
+			$('.js-tilt').tilt({
+				scale: 1.025,
+				maxTilt: 1.5
+			});
+		});
+	</script>
+
+	<!-- Navigation
+<nav class="side medium">
+  <div class="navigation">
+    <ul></ul>
+  </div>
+</nav>-->
+
+	<!-- Panel Top #library/panel/panel-top-07.html -->
+	<nav class="panel top topBar col-12-12">
+		<div class="sections desktop top">
+			<!-- Banner for Announcements
+			  <div class="center firstSlide rounded padding-1" style="background-color: #424145;">
+			<a href="https://apps.apple.com/us/app/yup-open-social-all-in-one/id6444166343" target="_blank">
+				  <ul class="menu weight-2 Gilroy-400 wrap">
+					  <li class="firstSlideOnly">🎉 We just launched on the App Store! <br class="hideForDesktop"> Download Yup here.</li>
+				  </ul>
+		  </a>
+			</div> -->
+		</div>
+		<div class="sections desktop top">
+			<div class="left"><a href="/" style="display:flex" title="Yup"><img class="logo" src="assets/svg/TextLogoWhite.svg"></a></div>
+			<div class="center firstSlide">
+				<ul class="menu hideForTablet firstSlideOnly weight-2 Gilroy-400">
+					<li class="firstSlideOnly"><a href="https://yupio.typeform.com/to/lXQyUc5e" target="_blank">Mobile</a></li>
+					<li class="firstSlideOnly"><a href="https://app.yup.io" target="_blank">Web</a></li>
+					<li class="firstSlideOnly"><a href="https://www.coingecko.com/en/coins/yup" target="_blank">YUP Token</a></li>
+				</ul>
+				<!--form  id="emailForm" method='post'>
+				<input class="hideForFirstSlide hideForLastSlide hideForDesktop round small white gradient" id="email56" type="email" name="email" placeholder="Email to Start" required  style="text-align: start; padding:0.3rem 0.75rem;font-family:Rubik;height:1.5rem;font-weight:100;font-size:12px;outline: none;border: 0;box-shadow:1px 1px 5px #00000040;"/>
+			</form-->
+			</div>
+			<div class="right">
+				<ul class="verticalCenter menu" style="padding:0 0px;">
+					<li class="" style="">
+						<a href="https://yupio.typeform.com/to/lXQyUc5e" class="button rounded-square main hideForTablet hideForFirstSlide hideForLastSlide" id="nav" style="box-shadow: 0px 0px 9px #606060;background:#00e08e;color:#0a0a0a;padding:6px 20px;margin:0px 0px -19px 0px;font-size:12px!important;font-family:Gilroy;font-weight:600!important;">Start
+						</a>
+					</li>
+					<li class="" style="margin:0px;">
+						<span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg>
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://yup.io/#menu"></use>
+							</svg></span>
+			</li></ul></div>
+			
+			
+		</div>
+	</nav>
+
+	<!-- Sidebar -->
+	<nav class="sidebar" data-sidebar-id="1">
+		<div class="content">
+			<ul class="mainMenu margin-top-3 Gilroy-500">
+				<li class="js-tilt"><a href="https://apps.apple.com/us/app/yup-open-social-all-in-one/id6444166343">Mobile App</a></li>
+				<li class="js-tilt"><a href="https://app.yup.io">Web</a></li>
+				<li class="js-tilt"><a href="https://www.coingecko.com/en/coins/yup">YUP Token</a></li>
+				<li class="js-tilt"><a href="https://yup.mirror.xyz/">Blog</a></li>
+				<li class="js-tilt"><a href="https://angel.co/company/yupteam/jobs">Join Team</a></li>
+			</ul>
+			<ul class="subMenu small opacity-8 margin-top-3 Gilroy-400">
+				<li class="js-tilt"><a href="https://discord.com/invite/HnaTAXK">Discord</a></li>
+				<li class="js-tilt"><a href="https://app.wonderverse.xyz/invite/XdiY_5WSkhZ1hQ">Quests</a></li>
+				<li class="js-tilt"><a href="mailto:community@yup.io">Contact Us</a></li>
+				<li class="js-tilt"><a href="https://docs.google.com/document/u/3/d/1LFrn0eeTfiy8lWAs8TPzWeydkRI-TRCDP0_NHCBOR0s/edit?usp=sharing">Privacy
+						Policy</a></li>
+			</ul>
+			<ul class="social opacity-8">
+				<li class="js-tilt"><a href="http://twitter.com/yup_io" target="_blank"><svg>
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://yup.io/#twitter"></use>
+						</svg></a></li>
+
+				<li class="js-tilt"><a href="http://instagram.com/yup.io_" target="_blank"><svg>
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://yup.io/#instagram"></use>
+						</svg></a></li>
+
+				<li class="js-tilt"><a href="https://www.linkedin.com/company/yupio/" target="_blank"><svg style="fill: #fff;">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://yup.io/#linkedin"></use>
+						</svg></a></li>
+
+				<li class="js-tilt"><a href="https://discord.com/invite/HnaTAXK" target="_blank"><svg style="fill: #fff;">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://yup.io/#discord"></use>
+						</svg></a></li>
+				<li class="js-tilt">
+					<a href="https://www.coingecko.com/en/coins/yup" target="_blank">
+						<img src="assets/logos/coingecko.svg" alt="CoinGecko" style="fill: #fff;height:20px;width:20px;">
+					</a>
+				</li>
+		</ul></div>
+	</nav>
+
+	<!-- Slide 1 (#72) -->
+	<section data-title="Home" class="slide fade-7 selected animate active">
+		<div class="content">
+			<div class="container" style="box-shadow: inset 0px 0px rgba(0, 255, 166, 0.4) !important;
+		   -webkit-box-shadow: inset 0 0 5vh #00e08e;">
+				<div class="wrap">
+					<ul class="flex verticalCenter">
+						<li class="ae-7 fromTop done">
+							<div class="cube-wrap">
+								<div class="cube">
+									<div class="side-cube laugh-sprite">
+										<lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ga1smp5x.json" background="transparent" speed="1.01" loop="" autoplay=""></lottie-player>
+									</div>
+									<div class="side-cube like-sprite-1">
+										<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_zbr1yuqv.json" background="transparent" speed="1" loop="" autoplay=""></lottie-player>
+									</div>
+									<div class="side-cube heart-sprite">
+										<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_2dhquvxj.json" background="transparent" speed="0.5" loop="" autoplay=""></lottie-player>
+									</div>
+									<div class="side-cube heart-sprite-1">
+										<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_btfmmbov.json" background="transparent" speed="0.8" loop="" autoplay=""></lottie-player>
+									</div>
+									<div class="side-cube like-sprite">
+										<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_ug0qzepg.json" background="transparent" speed="0.71" loop="" autoplay=""></lottie-player>
+									</div>
+									<div class="side-cube star-sprite-1">
+										<lottie-player src="https://assets1.lottiefiles.com/packages/lf20_eelqjhme.json" background="transparent" speed="1.2" loop="" autoplay=""></lottie-player>
+									</div>
+									<div class="side-cube star-sprite">
+										<lottie-player src="https://assets7.lottiefiles.com/packages/lf20_eelqjhme.json" background="transparent" speed="1.1" loop="" autoplay=""></lottie-player>
+									</div>
+									<div class="side-cube star-sprite-3">
+										<lottie-player src="https://assets6.lottiefiles.com/packages/lf20_9lxati4x.json" background="transparent" speed="1" loop="" autoplay=""></lottie-player>
+									</div>
+									<div class="side-cube like-sprite-2">
+										<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_2dhquvxj.json" background="transparent" speed="0.6" loop="" autoplay=""></lottie-player>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="col-6-12 col-tablet-1-2 col-phablet-1-1 col-phone-1-1 left ae-5 fromCenter showForDesktop hideForMobile done">
+							<div class="fix-6-12 center">
+								<div class="col-6-12 left">
+									<h1 class="huge ae-1 margin-bottom-3 done">
+										<div class="title" style="">
+											<mark style="padding-right: 1%;">Decentralized Social All-In-One.</mark>
+										</div>
+									</h1>
+									<p class="big hideForMobile margin-top-2 margin-bottom-2 ae-2 Gilroy-400 done">
+										Connect with friends on Twitter, Farcaster, Lens, Bluesky &amp; more in one app.
+									</p>
+									<div class="" style="margin-left: 8px">
+										<ul class="flex">
+											<li class="flex-shrink">
+												<p class="join-beta-text cropBottom" style="margin-right: 12px;">Join the beta:</p>
+											</li>
+											<li class="flex-grow">
+												<ul class="flex flex-grow">
+													<li class="flex-grow">
+															<a href="https://apps.apple.com/us/app/yup-open-social-all-in-one/id6444166343" target="_blank">
+																	<button class="button rounded-square small gradient ae-3 main white done" style="display: flex; align-items: center; justify-content: center;">
+																			<img src="assets/logos/apple.svg" alt="Apple Icon" class="button-icon" height="18px" style="margin-right: 8px; margin-top: -2px;">
+																			iPhone
+																	</button>
+															</a>
+													</li>
+													<li class="flex-grow">
+														<a href="https://play.google.com/store/apps/details?id=io.yup.app" target="_blank">
+																<button class="button rounded-square small gradient ae-3 main white done" style="display: flex; align-items: center; justify-content: center;">
+																		<img src="assets/logos/android.svg" alt="Android Icon" class="button-icon" style="margin-right: 8px;">
+																		Android
+																</button>
+														</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</div>
+						</div></li>
+						<li class="col-12-12 center ae-5 fromCenter hideForTablet hideForPhab hideForDesktop showForMobile done">
+							<div class="fix-6-12 center">
+								<div class="col-6-12 center" style="z-index:1000;">
+									<h1 class="huge ae-1 done">
+										<div class="title" style="">
+											<mark style="padding-right: 1%;">Decentralized Social<br>All-in-One</mark>
+										</div>
+									</h1>
+								</div>
+						</div></li>
+						<li class="col-6-12 col-tablet-1-2 col-phablet-1-1 col-phone-1-1 center ae-5 fromCenter done">
+							<div class="" style="z-index:-10;">
+								<lottie-player src="https://lottie.host/f4e2cc3a-c9fa-4b48-b34d-d81fdcb0cb4b/nKJNa1DvTE.json" background="transparent" speed="1.01" loop="" autoplay=""></lottie-player>
+							</div>
+							<label class="ae-4 crop main showForPhoneInline hideForDesktop hideForTablet Gilroy-400 center done" style="font-size: 16px;margin-top:-5rem;">Connect with friends on Twitter, Farcaster, Lens, Bluesky &amp; more in one app.<br>
+							<ul class="flex center flex-grow fullWidth" style="justify-content: center; margin-top: 20px;">
+								<li class="flex-grow">
+										<a href="https://apps.apple.com/us/app/yup-open-social-all-in-one/id6444166343" target="_blank">
+												<button class="button rounded-square small gradient ae-3 main white done" style="display: flex; align-items: center; justify-content: center;">
+														<img src="assets/logos/apple.svg" alt="Apple Icon" class="button-icon" height="18px" style="margin-right: 8px; margin-top: -2px;">
+														iPhone
+												</button>
+										</a>
+								</li>
+								<li class="flex-grow">
+									<a href="https://play.google.com/store/apps/details?id=io.yup.app" target="_blank">
+											<button class="button rounded-square small gradient ae-3 main white done" style="display: flex; align-items: center; justify-content: center;">
+													<img src="assets/logos/android.svg" alt="Android Icon" class="button-icon" style="margin-right: 8px;">
+													Android
+											</button>
+									</a>
+								</li>
+							</ul>
+						</label></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="background" style="background-image:url(assets/img/background/graphictest.png)!important;">
+			<!--video autoplay loop muted playsinline>
+      <source src="https://yup-website.s3.us-east-2.amazonaws.com/lines4.mp4" type="video/mp4">
+    </video>-->
+		</div>
+	</section>
+	<!-- Popup Video -->
+	<div class="popup autoplay" data-popup-id="16">
+		<div class="close"><svg>
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://yup.io/#close"></use>
+			</svg></div>
+		<div class="content">
+			<div class="container">
+				<div class="wrap">
+					<div class="fix-10-12">
+						<div class="embedVideo popupContent shadow rounded">
+							<iframe data-src="https://www.youtube.com/embed/UUi8_A5V7Cc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Slide 2 - Cross-Platform -->
+	<section data-title="Why" class="slide fade-7 kenBurns autoHeight after">
+		<div class="content">
+			<div class="container">
+				<div class="wrap">
+					<div class="fix-14-12">
+						<ul class="flex verticalCenter" style="justify-content:space-between;">
+							<li class="col-6-12 col-tablet-1-2 col-phone-1-1 xzi ae-1">
+								<img src="assets/img/crosspost.svg" width="100%" height="100%" class="ae-2 up-down-animation">
+							</li>
+							<li class="col-6-12 col-tablet-1-2 col-phone-1-1 left">
+								<h2 class="ae-3 fromBottom Gilroy-700" style="color: #fff;">Crosspost to your favorite platforms
+								</h2>
+								<p class="ae-2 opacity-8 small weight-5 Gilroy-300 rainbow-gradient">No matter where your friends are</p>
+								<p class="ae-3 opacity-6 small Gilroy-400">
+									Post to Twitter, Farcaster, Lens and Bluesky (or any combination you want) with just one click.</p>
+								<div class="left hideForPhablet">
+									<div class="fix-6-12 toLeft opacity-7">
+										<ul class="flex flex-68 tintLogos equal equalMobile margin-top-2">
+											<li class="col-3-12 col-tablet-1-4 col-phablet-1-3 col-phone-1-1">
+												<div class="table equalElement ae-5" style="height: 42.4219px;">
+													<div class="cell Gilroy-500" style="text-align:start;"><a href="#">Featured on:</a>
+													</div>
+												</div>
+											</li>
+											<li class="col-2-12 col-tablet-1-4 col-phablet-1-3 col-phone-1-12">
+												<div class="table wide equalElement ae-6" style="height: 42.4219px;">
+													<div class="cell"><a href="https://techcrunch.com/2020/09/01/student-led-accelerator-envision-reaches-demo-week-for-class-one-looks-to-class-two/"><img width="56" src="assets/img/techcrunch.png" alt="techcrunch"></a>
+													</div>
+												</div>
+											</li>
+											<li class="col-2-12 col-tablet-1-4 col-phablet-1-3 col-phone-1-12">
+												<div class="table wide equalElement ae-7" style="height: 42.4219px;">
+													<div class="cell"><a href="https://www.forbes.com/sites/ginaclarke/2019/01/09/after-ethereum-classic-suffers-51-hack-experts-consider-will-bitcoin-be-next/#7839545aa56b"><img width="88" src="assets/img/forbes.png" alt="Google"></a>
+													</div>
+												</div>
+											</li>
+											<li class="col-2-12 col-tablet-1-4 col-phablet-1-3 col-phone-1-12">
+												<div class="table wide equalElement ae-8" style="height: 42.4219px;">
+													<div class="cell"><a href="https://blog.coinbase.com/coinbase-reports-black-americans-crypto-97e54cc89f84?gi=276d783d8996"><img width="90" src="assets/img/coinbase.png" alt="Apple"></a>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="background" style="background-color: #404040"></div>
+	</section>
+
+	<!-- Slide 3 - MOBILE -->
+	<section data-title="Lists" class="slide fade-7 kenBurns autoHeight after">
+		<div class="content">
+			<div class="container">
+				<div class="wrap">
+					<div class="fix-8-12 toCenter">
+								<h2 class="ae-3 fromBottom Gilroy-700" style="color: #fff;">Features</h2>
+								<h3 class="ae-2 opacity-8 weight-5 Gilroy-500 rainbow-gradient">Everything one social app does, but for many</h3>
+					</div>
+					<div class="fix-12-12 margin-top-4">
+          <ul class="flex fixedSpaces later left">
+            <li class="col-3-12 col-tablet-1-2 col-phone-1-1">
+              <div class="button rounded empty margin-bottom-2 popupTrigger ae-3" data-popup-id="90-10"><img class="wide" src="assets/img/nativereactions.png" alt="Video Thumbnail"></div>
+              <h4 class="margin-bottom-1 ae-4 opacity-8 weight-5 Gilroy-500">Native Actions</h4>
+              <div class="ae-5"><p class="small opacity-8">
+									Comment, Like, and Repost on all platforms without leaving Yup.</p></div>
+            </li>
+            <li class="col-3-12 col-tablet-1-2 col-phone-1-1">
+              <a class="button rounded empty margin-bottom-2 ae-4"><img class="wide" src="assets/img/aggnotifs.png" alt="Image Thumbnail"></a>
+              <h4 class="opacity-8 weight-5 Gilroy-500 margin-bottom-1 ae-5">Notifications</h4>
+              <div class="ae-6"><p class="small opacity-8">All of your relevant platform notifications aggregated in one place. </p></div>
+            </li>
+            <li class="col-3-12 col-tablet-1-2 col-phone-1-1">
+              <a href="#" class="button rounded empty margin-bottom-2 ae-5"><img class="wide" src="assets/img/crossfollow.png" alt="Image Thumbnail"></a>
+              <h4 class="opacity-8 weight-5 Gilroy-500 margin-bottom-1 ae-6">Crossfollow</h4>
+              <div class="ae-7"><p class="small opacity-8">Follow your friends everywhere with one tap.</p></div>
+            </li>
+            <li class="col-3-12 col-tablet-1-2 col-phone-1-1">
+              <a href="#" class="button rounded empty margin-bottom-2 ae-6"><img class="wide" src="assets/img/uniqueposts.png" alt="Image Thumbnail"></a>
+              <h4 class="opacity-8 weight-5 Gilroy-500 margin-bottom-1 ae-7">Unique Posts</h4>
+              <div class="ae-8"><p class="small opacity-8">Engage with unique posts like articles, NFTs, events, and more.</p></div>
+            </li>
+          </ul>
+        </div>
+				</div>
+			</div>
+		</div>
+		<div class="background" style="background-color: #404040"></div>
+	</section>
+
+	<!-- Slide 3 - FEEDS + LISTS -->
+	<section data-title="Lists" class="slide fade-7 kenBurns autoHeight after">
+		<div class="content">
+			<div class="container">
+				<div class="wrap">
+					<div class="fix-14-12">
+						<ul class="flex verticalCenter" style="justify-content:space-between;">
+							<li class="col-6-12 col-tablet-7-12 xzi ae-1 left">
+								<ul class="flex verticalCenter fixedSpaces later equal fromCenter flex-71">
+										<a href="https://apps.apple.com/us/app/yup-open-social-all-in-one/id6444166343" target="_blank">
+											<img class="rounded up-down-animation" data-tilt-max="-3" src="assets/img/mobilefeeds.png" alt="Image Thumbnail">
+										</a>
+								</ul>
+							</li>
+							<li class="col-6-12 col-tablet-5-12">
+								<h2 class="ae-3 left fromBottom Gilroy-700" style="color: #fff;">Custom Feeds</h2>
+								<h3 class="ae-2 opacity-8 weight-5 Gilroy-500 left rainbow-gradient">Control your scroll</h3>
+								<p class="ae-3 opacity-6 small left Gilroy-400">
+									Humans &gt; algorithms. Customize your feeds to get more of what you want (and less of what you don't). </p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="background" style="background-color: #404040"></div>
+	</section>
+
+	<!-- Slide 4 - BOOKMARKS
+	<section data-title="Why" class="slide fade-7 kenBurns autoHeight">
+		<div class="content">
+			<div class="container">
+				<div class="wrap">
+					<div class="fix-12-12">
+						<ul class="flex verticalCenter" style="justify-content:space-between;">
+							<li class="col-6-12 col-tablet-1-2 col-phone-1-1 left">
+								<h2 class="ae-3 fromBottom Gilroy-700" style="color: #fff;">Create Bookmarks</h2>
+								<p class="ae-2 opacity-8 small weight-5 Gilroy-300 rainbow-gradient">
+									Curate everything
+								</p>
+								<p class="ae-3 opacity-6 small Gilroy-400">
+									Just right-click to bookmark anything across the web.
+									Bookmarks are the best way to curate and share whatever you're into, whether it's
+									NFTs, think pieces, or 70s mob movies.
+								</p>
+							</li>
+							<li class="col-6-12 col-tablet-1-2 col-phone-1-1 xzi ae-2">
+								<div>
+									<a
+										href="https://app.yup.io/leaderboard?site=all&subject=collections&category=overall">
+										<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_uyr3awu6.json"
+											background="transparent" speed="1" loop autoplay
+											style="margin-bottom:-20%"></lottie-player>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="background" style="background-color: #404040"></div>
+	</section> -->
+
+	<!-- Slide ? #61 >
+<section data-title="What"  class="slide kenBurns autoHeight">
+  <div class="content">
+    <div class="container">
+      <div class="wrap padding-5">
+				<div class="fix-12-12">
+					<h3 class="left col-12-12 large ae-3 fromBottom margin-bottom-0 Gilroy-700" style="color: #000;border-style:solid">Grow your influence with every like</h3>
+          <ul class="flex fixedSpaces later equal center fromCenter flex-71">
+						<li class="fromCenter col-3-12 ae-4 margin-top-2 left" style="color: #000">
+							<h2 id="opinions-metric" class="count update small Gilroy-700 opacity-7">0</h2>
+							<p class="small opacity-5 margin-bottom-0 Gilroy-400">Likes and Ratings</p>
+						</li>
+            <li class="col-3-12 ae-4 margin-top-2 left" style="color: #000">
+              <h2 class="margin-bottom-1 small Gilroy-700 opacity-7">$<a id="rewards-metric" class="count update small">0</a></h2>
+              <p class="small opacity-5 margin-bottom-0 Gilroy-400">Rewards</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background: -webkit-linear-gradient(45deg, #00e08e, #f0c909, #f08c28, #eb3650)"></div>
+</section>
+-->
+
+	<!-- Slide ? #61 
+<section data-title="What"  class="slide fade-7 kenBurns autoHeight animated">
+  <div class="content">
+    <div class="container">
+      <div class="wrap" style="padding-top: 20vh;">
+        <div class="fix-14-12">
+					<ul class="flex">
+						<li class="col-6-12 col-tablet-1-2 col-phablet-1-1 col-phone-1-1 left ae-5 fromCenter">
+							<ul class="slider equalElement hideForPhablet autoplay min-height-graphics" data-slider-interval="8000" data-slider-id="60">
+								<li class="selected fromCenter equalElement">
+									<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_07zt1sl3.json" class="rounded demodemo2 fromTop ae-1 fix-8-12" background="transparent"  speed="1"  loop autoplay></lottie-player>
+								</li>
+								<li class="fromCenter equalElement">
+									<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_07zt1sl3.json" class="rounded demodemo2 fromTop ae-1 fix-8-12" background="transparent"  speed="1"  loop autoplay></lottie-player>
+								</li>
+								<li class="fromCenter equalElement">
+									<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_07zt1sl3.json" class="rounded demodemo2 fromTop ae-1 fix-8-12" background="transparent"  speed="1"  loop autoplay></lottie-player>
+								</li>
+								<!--li class="fromCenter equalElement js-tilt" style="overflow:hidden;">
+									<lottie-player src="https://assets4.lottiefiles.com/private_files/lf30_71m9i9by.json" class="rounded demodemo2 fromTop ae-1 fix-8-12 js-tilt" background="transparent"  speed="1.34" loop autoplay></lottie-player>
+								</li>
+							</ul>
+						</li>
+						<li class="col-6-12 col-tablet-1-2 col-phablet-1-1 col-phone-1-1 left" style="">
+              <h2 class="ae-3 fromBottom margin-bottom-4 Gilroy-700" style="color: #fff;">How it Works</h2>
+							<ul class="pill vert tabs controller bold ae-4 fromCenter weight-8 thinner" style="max-width:85vw;letter-spacing:0px!important;" data-slider-id="60">
+								<li class="selected bg-mobile">
+									<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_07zt1sl3.json" class="rounded demodemo2 fromTop ae-1 fix-8-12 showForMobile hideForPhablet hideForTablet hideForDesktop" background="transparent"  speed="1.34"  loop autoplay></lottie-player>
+									<h3 class="small weight-5 Gilroy-600">
+									1. Taste turns into Capital</h3>
+									<p class="margin-bottom-0 small Gilroy-400 opacity-6">
+										Likes, ratings, and other reactions are added to Yup, building your taste profile.
+									</p>
+								</li>
+								<li class="">
+									<h3 class="small weight-5 Gilroy-600">
+									2. Curate & Share</h3>
+									<p class="small margin-bottom-0 Gilroy-400 opacity-6">
+									Make collections of different pieces of content and share them.</p>
+								</li>
+								<li class="">
+									<h3 class="small weight-5 Gilroy-600">
+									3. Earn Tokens and Influence</h3>
+									<p class="margin-bottom-0 small Gilroy-400 opacity-6">
+									When others like the content you've liked, you earn YUP tokens and your score increases!</p>
+								</li>
+							</ul>
+						</li>
+					</ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background-color: #404040"></div>
+</section>
+-->
+
+	<!-- PARTNERSHIPS -->
+	<section data-title="What" class="slide fade-7 kenBurns autoHeight after">
+		<div class="content">
+			<div class="container">
+				<div class="wrap padding-phablet-2">
+					<div class="fix-12-12">
+						<h2 class="leftlarge ae-1 fromBottom margin-bottom-2 Gilroy-700 padding-0" style="color: #fff;border-style:solid">Beloved Friends</h2>
+					</div>
+					<div class="fix-12-12 rainbow-outline-card border-gradient-rainbow rounded ae-2">
+						<ul class="flex verticalCenter fixedSpaces later equal center fromCenter flex-71">
+							<li class="col-3-12 col-phone-1-2">
+								<div class="table wide equalElement ae-4 padding-right-7 padding-left-7 padding-tablet-2" style="height: 153.5px;">
+									<div class="cell"><a href="https://www.dapperlabs.com/"><img src="assets/logos/dapper.svg" alt="dapper"></a>
+									</div>
+								</div>
+							</li>
+							<li class="col-3-12 col-phone-1-2">
+								<div class="table wide equalElement ae-4 padding-right-7 padding-left-7 padding-tablet-2" style="height: 153.5px;">
+									<div class="cell"><a href="http://www.distributedglobal.com/"><img src="assets/logos/dg.svg" alt="dg"></a>
+									</div>
+								</div>
+							</li>
+							<li class="col-3-12 col-phone-1-2">
+								<div class="table wide equalElement ae-4 padding-right-7 padding-left-7 padding-tablet-2" style="height: 153.5px;">
+									<div class="cell"><a href="https://www.seedclub.xyz/"><img src="assets/logos/seedclub.svg" alt="seedclub"></a>
+									</div>
+								</div>
+							</li>
+							<li class="col-3-12 col-phone-1-2">
+								<div class="table wide equalElement ae-3 padding-right-7 padding-left-7 padding-top-2 padding-bottom-2 padding-tablet-2" style="height: 153.5px;">
+									<div class="cell"><a href="https://kernel.community/"><img src="assets/logos/kernel.svg" alt="kernel"></a>
+									</div>
+								</div>
+							</li>
+							<li class="col-3-12 col-phone-1-2">
+								<div class="table wide equalElement ae-4 padding-right-7 padding-left-7 padding-tablet-2" style="height: 153.5px;">
+									<div class="cell"><a href="https://www.launchhouse.co/"><img src="assets/logos/lh.svg" alt="lh"></a>
+									</div>
+								</div>
+							</li>
+							<li class="col-3-12 col-phone-1-2">
+								<div class="table wide equalElement ae-5 padding-right-7 padding-left-7 padding-tablet-2" style="height: 153.5px;">
+									<div class="cell"><a href="https://palmtreecrew.com/"><img src="assets/logos/palmtree.svg" alt="palm tree"></a>
+									</div>
+								</div>
+							</li>
+							<li class="col-3-12 col-phone-1-2">
+								<div class="table wide equalElement ae-5 padding-right-7 padding-left-7 padding-tablet-2" style="height: 153.5px;">
+									<div class="cell"><a href="https://www.envisionaccelerator.com/"><img src="assets/logos/envision.svg" alt="envision"></a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="background" style="background-color: #404040"></div>
+	</section>
+
+	<!-- FINAL -->
+	<section class="slide fade-4 kenBurns autoHeight after">
+		<div class="content">
+			<div class="container">
+				<div class="wrap">
+					<div class="fix-7-12 hideForTablet showForDesktop margin-top-2 margin-bottom-2">
+						<h1 class="ae-3 fromBottom margin-bottom-2 Gilroy-600">Start Today</h1>
+						<p class="medium light ae-2 margin-bottom-4 Gilroy-300"><span class="opacity-5 hideForTablet">Come crosspost with us</span>
+						</p>
+						<a href="https://yupio.typeform.com/to/lXQyUc5e">
+							<button class="button rounded-square small gradient ae-3 main margin-bottom-2 hideForTablet" style="box-shadow: 0px 0px 9px #606060;background:#00e08e;color:#0a0a0a;font-family:Gilroy;width: 15rem; font-weight:500 !important;max-width:40vw;max-height:10vh;">Start
+							</button>
+						</a>
+					</div>
+					<div class="fix-7-12 hideForDesktop">
+						<h1 class="ae-1 fromBottom margin-bottom-4 Gilroy-600">Try Yup</h1>
+						<p class="larger light ae-2"><span class="opacity-8 hideForDesktop">Come crosspost with us.</span></p>
+						<div class="margin-top-3 toLeft">
+							<a href="https://yupio.typeform.com/to/lXQyUc5e">
+								<button class="button rounded-square small gradient ae-3 main margin-bottom-2 hideForDesktop" style="box-shadow: 0px 0px 9px #606060;background:#00e08e;color:#0a0a0a;font-family:Gilroy;width: 15rem; font-weight:500 !important;max-width:40vw;max-height:10vh;">Start
+								</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="background" style="background:#404040"></div>
+	</section>
+
+	<!-- Panel Bottom #09 -->
+	<nav class="panel bottom firstSlideOnly margin-bottom-3">
+		<div class="sections">
+			<div class="center"><span class="nextSlide"><svg style="fill: #1aeeb7;">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://yup.io/#arrow-down"></use>
+					</svg></span></div>
+		</div>
+	</nav>
+
+	<!-- Panel Bottom #13 -->
+	<nav class="panel bottom lastSlideOnly">
+		<div class="sections">
+			<div class="center">
+				<ul class="menu crop">
+					<li><a href="http://twitter.com/yup_io" target="_blank"><svg>
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://yup.io/#twitter"></use>
+							</svg></a></li>
+					<li><a href="https://discord.com/invite/HnaTAXK" target="_blank"><svg>
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://yup.io/#discord"></use>
+							</svg></a></li>
+					<li><a href="http://instagram.com/yup.io_" target="_blank"><svg>
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://yup.io/#instagram"></use>
+							</svg></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Mix Panel -->
+	<script type="text/javascript">
+		mixpanel.track_links("a", "Link Click");
+		mixpanel.track("Site Visit");
+	</script>
+
+	<!-- Word Animation -->
+	<script>
+		const words = ["Twitter", "Farcaster", "Lens", "Mirror", "Threads"];
+		let currentIndex = 0;
+		const swappableWordElement = document.getElementById("swappable-word");
+
+		setInterval(() => {
+			swappableWordElement.classList.add("fade-out");
+			setTimeout(() => {
+				currentIndex = (currentIndex + 1) % words.length;
+				swappableWordElement.textContent = words[currentIndex];
+				swappableWordElement.classList.remove("fade-out");
+			}, 300);
+		}, 1500);
+	</script>
+
+	<script src="tilt.jquery.js"></script>
+
+
+
+</body></html>
